@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj": {}
+    "C:\\Users\\mstfy\\Desktop\\Society\\Society.API\\Society.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj": {
+    "C:\\Users\\mstfy\\Desktop\\Society\\Society.API\\Society.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj",
+        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Society\\Society.API\\Society.Api.csproj",
         "projectName": "Society.Api",
-        "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj",
+        "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.API\\Society.Api.csproj",
         "packagesPath": "C:\\Users\\mstfy\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\obj\\",
         "projectStyle": "PackageReference",
