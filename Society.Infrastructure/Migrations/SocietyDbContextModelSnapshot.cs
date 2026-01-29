@@ -97,7 +97,7 @@ namespace Society.Infrastructure.Migrations
 
             modelBuilder.Entity("Society.Domain.Entities.UserProfile", b =>
                 {
-                    b.Property<Guid>("PersonId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Bio")
@@ -121,7 +121,7 @@ namespace Society.Infrastructure.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("PersonId");
+                    b.HasKey("UserId");
 
                     b.ToTable("Profile");
                 });
@@ -141,7 +141,7 @@ namespace Society.Infrastructure.Migrations
                 {
                     b.HasOne("Society.Domain.Entities.User", "User")
                         .WithOne("Profile")
-                        .HasForeignKey("Society.Domain.Entities.UserProfile", "PersonId")
+                        .HasForeignKey("Society.Domain.Entities.UserProfile", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
