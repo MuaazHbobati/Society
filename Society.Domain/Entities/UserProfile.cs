@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +10,7 @@ namespace Society.Domain.Entities
 {
     public class UserProfile
     {
+        [Key, ForeignKey("User")]
         public Guid PersonId { get; set; }
         public User User { get; set; } = null!;
         public string? Bio {  get; set; }
