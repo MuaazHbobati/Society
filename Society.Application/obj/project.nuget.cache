@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MCSsG8gx90s=",
+  "dgSpecHash": "LSvs/R/t/Rw=",
   "success": true,
   "projectFilePath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Society.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mstfy\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+    "C:\\Users\\mstfy\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\mstfy\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512"
   ],
   "logs": []
 }

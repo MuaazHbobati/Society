@@ -4,6 +4,9 @@ using Society.Application.Interfaces.Services;
 using Society.Application.Services;
 using Society.Infrastructure.Data;
 using Society.Infrastructure.Repositories;
+using FluentValidation.AspNetCore;
+using Society.Application.DTOs.Auth;
+using Society.Application.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,7 +21,10 @@ builder.Services.AddDbContext<SocietyDbContext>
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-
+builder.Services.AddControllers().AddFluentValidation(config =>
+{
+    config.RegisterValidatorsFromAssemblyContaining<RegisterRequestDtoValidator>();
+});
 
 var app = builder.Build();
 

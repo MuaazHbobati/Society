@@ -47,9 +47,12 @@ namespace Society.Application.Services
             };
             await _userRepository.AddAsync(user);
 
-            //var profile = new UserProfile();
-            
-            //await _userRepository.AddProfileAsync(profile);
+            var profile = new UserProfile()
+            {
+                UserId = user.Id
+            };
+
+            await _userRepository.AddProfileAsync(profile);
 
         }
         private string HashPassword(string password)
