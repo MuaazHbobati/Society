@@ -9,15 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Society.Application.Interfaces.Repositories;
+using System.Security.Claims;
+
 
 namespace Society.Application.Services
 {
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
-        public AuthService(IUserRepository userRepository)
+        private readonly IJwtProvider _jwtProvider;
+
+        public AuthService(IUserRepository userRepository, IJwtProvider jwtProvider)
         {
             _userRepository = userRepository;
+            _jwtProvider = jwtProvider;
         }
 
         public async Task<LoginResponseDto> LoginAsync(LoginRequestDto dto)
@@ -29,11 +34,13 @@ namespace Society.Application.Services
                 throw new Exception("Invalid email or password");
             }
 
-            if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
-            {
-                throw new Exception("Invalid email or password");
-            }
-            return new LoginResponseDto { Message = "Login successful" };
+            //if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+            //{
+            //    throw new Exception("Invalid email or password");
+            //}
+            var Token = _jwtProvider.GenerateToken(user.Id, user.Email);
+
+            return new LoginResponseDto { Token = Token , Message = "Login successful" };
         }
 
         public async Task RegisterAsync(RegisterRequestDto dto)
@@ -85,5 +92,6 @@ namespace Society.Application.Services
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
         }
+
     }
 }

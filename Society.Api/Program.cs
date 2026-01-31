@@ -7,6 +7,12 @@ using Society.Infrastructure.Repositories;
 using FluentValidation.AspNetCore;
 using Society.Application.DTOs.Auth;
 using Society.Application.Validators;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Society.Application.Interfaces.Services;
+using Society.Infrastructure;
+using Society.Infrastructure.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,16 +23,44 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+/////////////////////
+
 builder.Services.AddDbContext<SocietyDbContext>
 (options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
+/////////////////////
+
 builder.Services.AddControllers().AddFluentValidation(config =>
 {
     config.RegisterValidatorsFromAssemblyContaining<RegisterRequestDtoValidator>();
 });
+
+/////////////////////
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(option
+    =>
+{
+    option.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SUPER_SECRET_KEY_123456"))
+    };
+}
+);
+builder.Services.AddAuthorization();
+
+/////////////////////
+
+builder.Services.AddScoped<IJwtProvider, JwtProvider>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+////////////////////
 
 var app = builder.Build();
 
@@ -38,6 +72,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 
