@@ -7,6 +7,7 @@ namespace Society.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
@@ -24,10 +25,32 @@ namespace Society.Api.Controllers
                 await _authService.RegisterAsync(dto);
                 return Ok(new { message = "user registered successfully!" });
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 return BadRequest(new { error = ex.Message });
             }
         }
-    } 
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login(LoginRequestDto dto)
+        {
+            try
+            {
+                var result = await _authService.LoginAsync(dto);
+                return Ok(result);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { Message = ex.Message });
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { Message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = ex.Message });
+            }
+        }
+    }
 }

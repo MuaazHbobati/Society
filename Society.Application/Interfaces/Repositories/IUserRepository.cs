@@ -13,9 +13,8 @@ namespace Society.Application.Interfaces.Repositories
         Task AddPersonAsync(Person person);
         Task AddProfileAsync(UserProfile userProfile);
         Task AddAsync (User user);
-
         Task<bool> isUsernameExistAsync(string username);
         Task<bool> isEmailExistAsync(string email);
-
+        Task<User> GetUserByEmailAsync(string email);
     }
 }

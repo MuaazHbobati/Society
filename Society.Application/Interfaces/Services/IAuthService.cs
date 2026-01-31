@@ -10,5 +10,6 @@ namespace Society.Application.Interfaces.Services
     public interface IAuthService
     {
         Task RegisterAsync(RegisterRequestDto dto);
+        Task<LoginResponseDto> LoginAsync(LoginRequestDto dto);
     }
 }

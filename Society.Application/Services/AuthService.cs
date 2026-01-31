@@ -19,8 +19,34 @@ namespace Society.Application.Services
         {
             _userRepository = userRepository;
         }
+
+        public async Task<LoginResponseDto> LoginAsync(LoginRequestDto dto)
+        {
+            var user = await _userRepository.GetUserByEmailAsync(dto.Email);
+
+            if (user == null) 
+            {
+                throw new Exception("Invalid email or password");
+            }
+
+            if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+            {
+                throw new Exception("Invalid email or password");
+            }
+            return new LoginResponseDto { Message = "Login successful" };
+        }
+
         public async Task RegisterAsync(RegisterRequestDto dto)
         {
+            if(await _userRepository.isEmailExistAsync(dto.Email))
+            {
+                throw new ArgumentException("Email alredy exist");
+            }
+            if(await _userRepository.isUsernameExistAsync(dto.Username) && !string.IsNullOrEmpty(dto.Username))
+            {
+                throw new ArgumentException("Username alredy exist");
+            }
+
             if(!Enum.TryParse<Gender>(dto.Gender,true,out var gender))
             {
                 throw new Exception("Invalid gender value");
