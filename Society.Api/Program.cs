@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Society.Application.Interfaces.Repositories;
 using Society.Application.Interfaces.Services;
 using Society.Application.Services;
@@ -10,61 +10,109 @@ using Society.Application.Validators;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Society.Application.Interfaces.Services;
 using Society.Infrastructure;
 using Society.Infrastructure.Identity;
+using Society.Application.Validators.UserProfile;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using Microsoft.Data.SqlClient;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// =====================
+// Controllers + Validation
+// =====================
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-/////////////////////
-
-builder.Services.AddDbContext<SocietyDbContext>
-(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IAuthService, AuthService>();
-
-/////////////////////
-
-builder.Services.AddControllers().AddFluentValidation(config =>
-{
-    config.RegisterValidatorsFromAssemblyContaining<RegisterRequestDtoValidator>();
-});
-
-/////////////////////
-
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(option
-    =>
-{
-    option.TokenValidationParameters = new TokenValidationParameters
+builder.Services.AddControllers()
+    .AddFluentValidation(fv =>
     {
-        ValidateIssuer = false,
-        ValidateAudience = false,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SUPER_SECRET_KEY_123456"))
-    };
-}
+        fv.RegisterValidatorsFromAssemblyContaining<UpdateUserProfileDtoValidator>();
+    });
+
+// =====================
+// Database
+// =====================
+builder.Services.AddDbContext<SocietyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
+// =====================
+// Dependency Injection
+// =====================
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IJwtProvider, JwtProvider>();
+builder.Services.AddScoped<IUserProfileService, UserProfileService>();
+builder.Services.AddScoped<IUserProfileRepository, UserProfileRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+// =====================
+// Authentication (JWT)
+// =====================
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+            )
+        };
+    });
+
 builder.Services.AddAuthorization();
 
-/////////////////////
+// =====================
+// Swagger + JWT
+// =====================
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Society API",
+        Version = "v1"
+    });
 
-builder.Services.AddScoped<IJwtProvider, JwtProvider>();
-builder.Services.AddScoped<IAuthService, AuthService>();
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter: Bearer {your JWT token}"
+    });
 
-////////////////////
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// =====================
+// Middleware
+// =====================
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -74,9 +122,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
-
 app.UseAuthorization();
 
 app.MapControllers();
-
 app.Run();
+
+

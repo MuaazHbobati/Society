@@ -38,6 +38,7 @@ namespace Society.Application.Services
             //{
             //    throw new Exception("Invalid email or password");
             //}
+
             var Token = _jwtProvider.GenerateToken(user.Id, user.Email);
 
             return new LoginResponseDto { Token = Token , Message = "Login successful" };
