@@ -54,15 +54,7 @@ namespace Society.Api.Controllers
             return Ok(profile);
        
         }
-        [Authorize]
-        [HttpGet("test-auth")]
-        public IActionResult TestAuth()
-        {
-            return Ok(new
-            {
-                User.Identity?.IsAuthenticated,
-                Claims = User.Claims.Select(c => new { c.Type, c.Value })
-            });
-        }
+
+
     }
 }
