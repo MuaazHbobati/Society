@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|c:\\users\\mstfy\\desktop\\society\\society.api\\controllers\\userprofilecommtroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|solutionrelative:controllers\\userprofilecommtroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Migrations\\20260201172323_InitialPartnrSystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F648F69D-F1E9-4244-BF25-879F98D498CB}|..\\Society.Infrastructure\\Society.Infrastructure.csproj|c:\\users\\mstfy\\desktop\\society\\society.infrastructure\\data\\societydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\entities\\partnerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\entities\\partnerapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|c:\\users\\mstfy\\desktop\\society\\society.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\enums\\requeststatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\enums\\applicationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\enums\\requestcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +47,118 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserProfileCommtroller.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\UserProfileCommtroller.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserProfileCommtroller.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\UserProfileCommtroller.cs",
-              "RelativeToolTip": "Controllers\\UserProfileCommtroller.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAuwDkAAAAAAAAAAAAAAA==",
+              "Title": "20260201172323_InitialPartnrSystem.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Migrations\\20260201172323_InitialPartnrSystem.cs",
+              "RelativeDocumentMoniker": "..\\Society.Infrastructure\\Migrations\\20260201172323_InitialPartnrSystem.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Migrations\\20260201172323_InitialPartnrSystem.cs",
+              "RelativeToolTip": "..\\Society.Infrastructure\\Migrations\\20260201172323_InitialPartnrSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T19:23:42.611Z",
+              "WhenOpened": "2026-02-01T17:23:23.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "..\\Society.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "..\\Society.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA9wB8AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T16:53:56.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-01T16:05:51.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SocietyDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Data\\SocietyDbContext.cs",
+              "RelativeDocumentMoniker": "..\\Society.Infrastructure\\Data\\SocietyDbContext.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Data\\SocietyDbContext.cs",
+              "RelativeToolTip": "..\\Society.Infrastructure\\Data\\SocietyDbContext.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAIwCsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T15:21:20.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RequestStatus.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Enums\\RequestStatus.cs",
+              "RelativeDocumentMoniker": "..\\Society.Domain\\Enums\\RequestStatus.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Enums\\RequestStatus.cs",
+              "RelativeToolTip": "..\\Society.Domain\\Enums\\RequestStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T15:14:47.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RequestCategory.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Enums\\RequestCategory.cs",
+              "RelativeDocumentMoniker": "..\\Society.Domain\\Enums\\RequestCategory.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Enums\\RequestCategory.cs",
+              "RelativeToolTip": "..\\Society.Domain\\Enums\\RequestCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T15:14:46.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ApplicationStatus.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Enums\\ApplicationStatus.cs",
+              "RelativeDocumentMoniker": "..\\Society.Domain\\Enums\\ApplicationStatus.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Enums\\ApplicationStatus.cs",
+              "RelativeToolTip": "..\\Society.Domain\\Enums\\ApplicationStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T15:14:45.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PartnerApplication.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\PartnerApplication.cs",
+              "RelativeDocumentMoniker": "..\\Society.Domain\\Entities\\PartnerApplication.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\PartnerApplication.cs",
+              "RelativeToolTip": "..\\Society.Domain\\Entities\\PartnerApplication.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwAkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T15:14:38.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PartnerRequest.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\PartnerRequest.cs",
+              "RelativeDocumentMoniker": "..\\Society.Domain\\Entities\\PartnerRequest.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\PartnerRequest.cs",
+              "RelativeToolTip": "..\\Society.Domain\\Entities\\PartnerRequest.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvwgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-01T15:14:37.861Z",
               "EditorCaption": ""
             }
           ]

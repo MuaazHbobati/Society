@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|c:\\users\\mstfy\\desktop\\society\\society.api\\controllers\\userprofilecommtroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|solutionrelative:controllers\\userprofilecommtroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserProfileCommtroller.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\UserProfileCommtroller.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserProfileCommtroller.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\UserProfileCommtroller.cs",
-              "RelativeToolTip": "Controllers\\UserProfileCommtroller.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAuwDkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T19:23:42.611Z",
-              "EditorCaption": ""
             }
           ]
         }
