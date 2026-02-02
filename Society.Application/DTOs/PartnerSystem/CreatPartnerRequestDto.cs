@@ -7,8 +7,10 @@ using Society.Domain.Enums;
 
 namespace Society.Application.DTOs.PartnerSystem
 {
-    public class CreatPartnerRequestDto
+    public class CreatePartnerRequestDto
     {
+
+        public string Title { get; set; } = null!;
         public RequestCategory Category { get; set; }
         public string Program { get; set; } = null!;
         public string Subject { get; set; } = null!;

@@ -47,6 +47,10 @@ builder.Services.AddScoped<IUserProfileService, UserProfileService>();
 builder.Services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
+builder.Services.AddScoped<IPartnerRequestRepository, PartnerRequestRepository>();
+builder.Services.AddScoped<IPartnerRequestService, PartnerRequestService>();
+
+
 // =====================
 // Authentication (JWT)
 // =====================

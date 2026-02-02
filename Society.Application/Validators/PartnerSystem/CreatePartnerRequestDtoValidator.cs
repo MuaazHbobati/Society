@@ -9,9 +9,9 @@ using Society.Application.DTOs.PartnerSystem;
 
 namespace Society.Application.Validators.PartnerSystem
 {
-    public class CreatPartnerRequestDtoValidator : AbstractValidator<CreatPartnerRequestDto>
+    public class CreatePartnerRequestDtoValidator : AbstractValidator<CreatePartnerRequestDto>
     {
-        public CreatPartnerRequestDtoValidator()
+        public CreatePartnerRequestDtoValidator()
         {
             //Category
             RuleFor(x => x.Category).IsInEnum().WithMessage("Invalid requist category.");

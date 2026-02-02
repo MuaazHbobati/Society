@@ -19,6 +19,13 @@ namespace Society.Domain.Entities
 
         public string? Description { get; set; }
 
+        [Required, MaxLength(100)]
+        public string Program { get; set; } = null!;
+
+
+        [Required, MaxLength(100)]
+        public string Subject { get; set; } = null!;
+
         public RequestCategory Category { get; set; }
 
         public RequestStatus Status { get; set; } = RequestStatus.Open;
@@ -47,6 +54,7 @@ namespace Society.Domain.Entities
                 return count;
             }
         }
+
 
         public void CheckIfFilled()
         {
