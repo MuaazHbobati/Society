@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\dtos\\partnersystem\\creatpartnerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F648F69D-F1E9-4244-BF25-879F98D498CB}|..\\Society.Infrastructure\\Society.Infrastructure.csproj|c:\\users\\mstfy\\desktop\\society\\society.infrastructure\\repositories\\partnerrequestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\dtos\\partnersystem\\paetnerrequestlistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\entities\\partnerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,61 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PaetnerRequestListDto.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\DTOs\\PartnerSystem\\PaetnerRequestListDto.cs",
-              "RelativeDocumentMoniker": "..\\Society.Application\\DTOs\\PartnerSystem\\PaetnerRequestListDto.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\DTOs\\PartnerSystem\\PaetnerRequestListDto.cs",
-              "RelativeToolTip": "..\\Society.Application\\DTOs\\PartnerSystem\\PaetnerRequestListDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T00:31:30.005Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PartnerRequest.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\PartnerRequest.cs",
-              "RelativeDocumentMoniker": "..\\Society.Domain\\Entities\\PartnerRequest.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\PartnerRequest.cs",
-              "RelativeToolTip": "..\\Society.Domain\\Entities\\PartnerRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T00:26:36.468Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreatPartnerRequestDto.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\DTOs\\PartnerSystem\\CreatPartnerRequestDto.cs",
-              "RelativeDocumentMoniker": "..\\Society.Application\\DTOs\\PartnerSystem\\CreatPartnerRequestDto.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\DTOs\\PartnerSystem\\CreatPartnerRequestDto.cs",
-              "RelativeToolTip": "..\\Society.Application\\DTOs\\PartnerSystem\\CreatPartnerRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T00:26:18.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PartnerRequestRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\PartnerRequestRepository.cs",
-              "RelativeDocumentMoniker": "..\\Society.Infrastructure\\Repositories\\PartnerRequestRepository.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\PartnerRequestRepository.cs",
-              "RelativeToolTip": "..\\Society.Infrastructure\\Repositories\\PartnerRequestRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T00:21:32.571Z",
-              "EditorCaption": ""
             }
           ]
         }

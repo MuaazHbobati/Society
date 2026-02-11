@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Society.Application.Interfaces.Repositories
+namespace Society.Domain.Enums
 {
-    public interface IUnitOfWork
+    public enum TeamFormationStatus
     {
-        Task SaveChangesAsync();
+        Open = 0,
+        Full = 1,
+        Closed = 2
     }
 }

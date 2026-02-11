@@ -20,12 +20,12 @@ namespace Society.Infrastructure.Repositories
 
         public async Task<UserProfile?> GetByUserIdAsync(Guid userId)
         {
-            return await _context.Profile.FirstOrDefaultAsync(x => x.UserId == userId);
+            return await _context.UserProfiles.FirstOrDefaultAsync(x => x.UserId == userId);
         }
 
         public async Task UpdateAsync(UserProfile profile)
         {
-            _context.Profile.Update(profile);
+            _context.UserProfiles.Update(profile);
             await _context.SaveChangesAsync();
         }
     }

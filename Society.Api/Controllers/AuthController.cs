@@ -32,7 +32,7 @@ namespace Society.Api.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login(LoginRequestDto dto)
+        public async Task<IActionResult> Login([FromBody] LoginRequestDto dto)
         {
             try
             {

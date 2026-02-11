@@ -48,8 +48,9 @@ namespace Society.Api.Controllers
             var profile = await _userProfileService.GetMyProfileAsync(Guid .Parse(userId));
             if (profile == null)
             {
-                NotFound();
+                return NotFound();
             }
+
 
             return Ok(profile);
        

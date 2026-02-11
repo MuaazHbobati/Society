@@ -26,10 +26,6 @@ namespace Society.Domain.Entities
         public bool IsActive { get; set; } = true;
         public DateTime LastLoginAt { get; set; }
         public UserProfile? Profile { get; set; }
-        
-
-        public ICollection<PartnerApplication> Application { get; set; } = new List<PartnerApplication>();
-        public ICollection<PartnerRequest> CreatedPartnerRequests { get; set; } = new List<PartnerRequest>();
-
+       
     }
 }

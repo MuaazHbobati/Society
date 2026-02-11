@@ -33,7 +33,7 @@ namespace Society.Infrastructure.Repositories
 
         public async Task AddProfileAsync(UserProfile userProfile)
         {
-            _context.Profile.Add(userProfile);
+            _context.UserProfiles.Add(userProfile);
             await _context.SaveChangesAsync();
         }
 

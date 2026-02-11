@@ -16,7 +16,7 @@ using Society.Application.Validators.UserProfile;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Microsoft.Data.SqlClient;
-
+using Microsoft.AspNetCore.Cors;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,9 +46,6 @@ builder.Services.AddScoped<IJwtProvider, JwtProvider>();
 builder.Services.AddScoped<IUserProfileService, UserProfileService>();
 builder.Services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-
-builder.Services.AddScoped<IPartnerRequestRepository, PartnerRequestRepository>();
-builder.Services.AddScoped<IPartnerRequestService, PartnerRequestService>();
 
 
 // =====================
@@ -112,11 +109,28 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
+});
+
+
+
 var app = builder.Build();
+app.UseCors("AllowAll");
 
 // =====================
 // Middleware
 // =====================
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

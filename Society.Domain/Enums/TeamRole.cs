@@ -6,5 +6,9 @@ using System.Threading.Tasks;
 
 namespace Society.Domain.Enums
 {
-    public enum RequestCategory { Homework = 1, Project = 2 }
+    public enum TeamRole
+    {
+        Creator = 0,
+        Member = 1
+    }
 }
