@@ -25,6 +25,11 @@ namespace Society.Domain.Entities
         public TeamFormationStatus Status { get; set; } = TeamFormationStatus.Open;
 
         public int CurrentMembersCount { get; set; } = 1;
+
+        // Navigation
+        public ProgramSubject ProgramSubject { get; set; }
+
+        public Team? Team { get; set; }
     }
 
 }

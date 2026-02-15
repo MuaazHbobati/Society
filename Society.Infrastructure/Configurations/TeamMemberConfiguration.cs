@@ -1,11 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Society.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Society.Infrastructure.Configurations
 {
@@ -20,7 +15,22 @@ namespace Society.Infrastructure.Configurations
 
             builder.HasIndex(tm => new { tm.TeamId, tm.UserId })
                    .IsUnique();
+
+            // 🔹 TeamMember -> Team
+            builder
+                .HasOne(tm => tm.Team)
+                .WithMany(t => t.Members)
+                .HasForeignKey(tm => tm.TeamId)
+                .OnDelete(DeleteBehavior.Cascade);
+            // إذا انحذف Team نحذف الأعضاء
+
+            // 🔹 TeamMember -> User
+            builder
+                .HasOne<User>()
+                .WithMany()
+                .HasForeignKey(tm => tm.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+            // منع cascade لتجنب multiple cascade paths
         }
     }
-
 }

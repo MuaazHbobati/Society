@@ -10,5 +10,8 @@ namespace Society.Domain.Entities
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
+
+        public ICollection<ProgramSubject> ProgramSubjects { get; set; } = new List<ProgramSubject>();
     }
+
 }

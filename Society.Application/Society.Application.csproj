@@ -15,4 +15,9 @@
     <ProjectReference Include="..\Society.Domain\Society.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\TeamSystem\TeamMember\" />
+    <Folder Include="DTOs\TeamSystem\Team\" />
+  </ItemGroup>
+
 </Project>

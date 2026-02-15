@@ -17,7 +17,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Cors;
-
+using Society.Application.Interfaces.Repositories.TeamSystem;
+using Society.Infrastructure.Repositories.TeamSystem;
+using Society.Application.Interfaces.Services.TeamSystem.TeamFormation;
+using Society.Application.Services.TeamSystem.TeamFormation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +49,9 @@ builder.Services.AddScoped<IJwtProvider, JwtProvider>();
 builder.Services.AddScoped<IUserProfileService, UserProfileService>();
 builder.Services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+// تسجيل الـ TeamFormation Service والـ Repository
+builder.Services.AddScoped<ITeamFormationService, TeamFormationService>();
+builder.Services.AddScoped<ITeamFormationRepository, TeamFormationRepository>();
 
 
 // =====================

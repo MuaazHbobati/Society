@@ -17,6 +17,15 @@ namespace Society.Domain.Entities
         public string Title { get; set; }
 
         public DateTime CreatedAt { get; set; }
+
+
+        // Navigation
+        public TeamFormation Formation { get; set; }
+
+        public ProgramSubject ProgramSubject { get; set; }
+        public ICollection<TeamMember> Members { get; set; } = new List<TeamMember>();
+
     }
+
 
 }

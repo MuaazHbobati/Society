@@ -82,16 +82,19 @@ namespace Society.Infrastructure.Migrations
 
             modelBuilder.Entity("Society.Domain.Entities.ProgramSubject", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("ProgramId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("SubjectId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
+                    b.HasKey("Id");
 
-                    b.HasKey("ProgramId", "SubjectId");
+                    b.HasIndex("SubjectId");
 
                     b.HasIndex("ProgramId", "SubjectId")
                         .IsUnique();
@@ -101,63 +104,63 @@ namespace Society.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
+                            Id = new Guid("9b8e70b7-8561-467f-bdb5-f88ecc23feab"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000001"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000001")
                         },
                         new
                         {
+                            Id = new Guid("fe82ce59-0cd4-4b86-b12d-81397508b1d5"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000002"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000002")
                         },
                         new
                         {
+                            Id = new Guid("45f449cc-1d36-47c7-9252-272214e68904"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000003"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000003")
                         },
                         new
                         {
+                            Id = new Guid("dc2d091f-5088-4067-b053-cf5b9cffb396"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000004"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000004")
                         },
                         new
                         {
+                            Id = new Guid("54a5b878-f801-4023-b2c4-f2384c34b592"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000005"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000005")
                         },
                         new
                         {
+                            Id = new Guid("49b182a5-a099-47f4-b3e8-3e18f02f728e"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000006"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000006")
                         },
                         new
                         {
+                            Id = new Guid("b21bb3c7-2869-46d5-a7fb-7f97a8a82c99"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000007"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000007")
                         },
                         new
                         {
+                            Id = new Guid("e8af1649-309f-4aba-a7f3-3aef954ac753"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000008"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000008")
                         },
                         new
                         {
+                            Id = new Guid("83aedf3c-7601-43f9-9d78-b57b784174b4"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000009"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000009")
                         },
                         new
                         {
+                            Id = new Guid("c8497aba-6cf8-4939-90d2-c51877620c8e"),
                             ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000010"),
-                            Id = new Guid("00000000-0000-0000-0000-000000000000")
+                            SubjectId = new Guid("20000000-0000-0000-0000-000000000010")
                         });
                 });
 
@@ -177,9 +180,6 @@ namespace Society.Infrastructure.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<Guid>("ProgramId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("Id");
 
                     b.ToTable("Subjects");
@@ -189,71 +189,61 @@ namespace Society.Infrastructure.Migrations
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000001"),
                             Code = "BPG401",
-                            Name = "Web Programming 1",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Web Programming 1"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000002"),
                             Code = "BPG402",
-                            Name = "Web Programming 2",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Web Programming 2"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000003"),
                             Code = "DBS301",
-                            Name = "Databases",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Databases"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000004"),
                             Code = "ALG201",
-                            Name = "Algorithms",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Algorithms"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000005"),
                             Code = "OOP101",
-                            Name = "OOP",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "OOP"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000006"),
                             Code = "NET101",
-                            Name = "Networking",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Networking"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000007"),
                             Code = "SEC201",
-                            Name = "Cyber Security",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Cyber Security"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000008"),
                             Code = "AI101",
-                            Name = "Intro to AI",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Intro to AI"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000009"),
                             Code = "SE201",
-                            Name = "Software Engineering",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Software Engineering"
                         },
                         new
                         {
                             Id = new Guid("20000000-0000-0000-0000-000000000010"),
                             Code = "OS301",
-                            Name = "Operating Systems",
-                            ProgramId = new Guid("00000000-0000-0000-0000-000000000000")
+                            Name = "Operating Systems"
                         });
                 });
 
@@ -278,6 +268,11 @@ namespace Society.Infrastructure.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FormationId")
+                        .IsUnique();
+
+                    b.HasIndex("ProgramSubjectId");
 
                     b.ToTable("Teams");
                 });
@@ -318,6 +313,8 @@ namespace Society.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProgramSubjectId");
+
                     b.HasIndex("Status");
 
                     b.ToTable("TeamFormations");
@@ -339,6 +336,8 @@ namespace Society.Infrastructure.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.HasIndex("TeamId", "UserId")
                         .IsUnique();
@@ -415,6 +414,72 @@ namespace Society.Infrastructure.Migrations
                     b.ToTable("UserProfiles");
                 });
 
+            modelBuilder.Entity("Society.Domain.Entities.ProgramSubject", b =>
+                {
+                    b.HasOne("Society.Domain.Entities.Program", "Program")
+                        .WithMany("ProgramSubjects")
+                        .HasForeignKey("ProgramId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Society.Domain.Entities.Subject", "Subject")
+                        .WithMany("ProgramSubjects")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Program");
+
+                    b.Navigation("Subject");
+                });
+
+            modelBuilder.Entity("Society.Domain.Entities.Team", b =>
+                {
+                    b.HasOne("Society.Domain.Entities.TeamFormation", "Formation")
+                        .WithOne("Team")
+                        .HasForeignKey("Society.Domain.Entities.Team", "FormationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Society.Domain.Entities.ProgramSubject", "ProgramSubject")
+                        .WithMany("Teams")
+                        .HasForeignKey("ProgramSubjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Formation");
+
+                    b.Navigation("ProgramSubject");
+                });
+
+            modelBuilder.Entity("Society.Domain.Entities.TeamFormation", b =>
+                {
+                    b.HasOne("Society.Domain.Entities.ProgramSubject", "ProgramSubject")
+                        .WithMany("TeamFormations")
+                        .HasForeignKey("ProgramSubjectId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ProgramSubject");
+                });
+
+            modelBuilder.Entity("Society.Domain.Entities.TeamMember", b =>
+                {
+                    b.HasOne("Society.Domain.Entities.Team", "Team")
+                        .WithMany("Members")
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Society.Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Team");
+                });
+
             modelBuilder.Entity("Society.Domain.Entities.User", b =>
                 {
                     b.HasOne("Society.Domain.Entities.Person", "Person")
@@ -440,6 +505,33 @@ namespace Society.Infrastructure.Migrations
             modelBuilder.Entity("Society.Domain.Entities.Person", b =>
                 {
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Society.Domain.Entities.Program", b =>
+                {
+                    b.Navigation("ProgramSubjects");
+                });
+
+            modelBuilder.Entity("Society.Domain.Entities.ProgramSubject", b =>
+                {
+                    b.Navigation("TeamFormations");
+
+                    b.Navigation("Teams");
+                });
+
+            modelBuilder.Entity("Society.Domain.Entities.Subject", b =>
+                {
+                    b.Navigation("ProgramSubjects");
+                });
+
+            modelBuilder.Entity("Society.Domain.Entities.Team", b =>
+                {
+                    b.Navigation("Members");
+                });
+
+            modelBuilder.Entity("Society.Domain.Entities.TeamFormation", b =>
+                {
+                    b.Navigation("Team");
                 });
 
             modelBuilder.Entity("Society.Domain.Entities.User", b =>

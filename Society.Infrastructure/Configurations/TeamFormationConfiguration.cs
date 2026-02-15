@@ -1,11 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Society.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Society.Infrastructure.Configurations
 {
@@ -26,7 +21,20 @@ namespace Society.Infrastructure.Configurations
                    .HasConversion<int>();
 
             builder.HasIndex(tf => tf.Status);
+
+            // 🔹 Relation with ProgramSubject (Many Formations -> One ProgramSubject)
+            builder
+                .HasOne(tf => tf.ProgramSubject)
+                .WithMany(ps => ps.TeamFormations)
+                .HasForeignKey(tf => tf.ProgramSubjectId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // 🔹 Relation with Team (One Formation -> One Team)
+            builder
+                .HasOne(tf => tf.Team)
+                .WithOne(t => t.Formation)
+                .HasForeignKey<Team>(t => t.FormationId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
-
 }

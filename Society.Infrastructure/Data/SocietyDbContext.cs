@@ -8,7 +8,7 @@ namespace Society.Infrastructure.Data
 {
     public class SocietyDbContext : DbContext
     {
-        public SocietyDbContext(DbContextOptions<SocietyDbContext> options) : base(options) 
+        public SocietyDbContext(DbContextOptions<SocietyDbContext> options) : base(options)
         {
         }
 
@@ -27,10 +27,6 @@ namespace Society.Infrastructure.Data
         {
             // Apply entity configurations
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SocietyDbContext).Assembly);
-
-            // --- Configure Composite Key for Many-to-Many ---
-            modelBuilder.Entity<ProgramSubject>()
-                .HasKey(ps => new { ps.ProgramId, ps.SubjectId });
 
             // --- Seed Data ---
             var iteId = Guid.Parse("11111111-1111-1111-1111-111111111111");
@@ -60,9 +56,9 @@ namespace Society.Infrastructure.Data
             };
             modelBuilder.Entity<Subject>().HasData(subjects);
 
-            // ProgramSubjects (Many-to-Many)
             var programSubjects = subjects.Select(s => new ProgramSubject
             {
+                Id = Guid.NewGuid(),
                 ProgramId = iteId,
                 SubjectId = s.Id
             }).ToList();

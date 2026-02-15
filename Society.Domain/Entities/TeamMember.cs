@@ -16,6 +16,10 @@ namespace Society.Domain.Entities
         public Guid UserId { get; set; }
 
         public TeamRole Role { get; set; }
+
+        // Navigation
+        public Team Team { get; set; }
     }
+
 
 }

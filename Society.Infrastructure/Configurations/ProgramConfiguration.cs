@@ -18,6 +18,13 @@ namespace Society.Infrastructure.Configurations
             builder.Property(p => p.Name)
                    .IsRequired()
                    .HasMaxLength(200);
+
+            // 🔹 Relation: Program -> ProgramSubjects
+            builder
+                .HasMany(p => p.ProgramSubjects)
+                .WithOne(ps => ps.Program)
+                .HasForeignKey(ps => ps.ProgramId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 

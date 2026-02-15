@@ -12,6 +12,6 @@ namespace Society.Domain.Entities
         public string Code { get; set; }
         public string Name { get; set; }
 
-        public Guid ProgramId { get; set; }
+        public ICollection<ProgramSubject> ProgramSubjects { get; set; } = new List<ProgramSubject>();
     }
 }
