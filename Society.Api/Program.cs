@@ -53,6 +53,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITeamFormationService, TeamFormationService>();
 builder.Services.AddScoped<ITeamFormationRepository, TeamFormationRepository>();
 
+builder.Services.AddScoped<IProgramService, ProgramService>();
+builder.Services.AddScoped<IProgramRepository, ProgramRepository>();
+
 
 // =====================
 // Authentication (JWT)
@@ -131,7 +134,6 @@ builder.Services.AddCors(options =>
 
 
 var app = builder.Build();
-app.UseCors("AllowAll");
 
 // =====================
 // Middleware
@@ -144,7 +146,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 

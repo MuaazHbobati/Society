@@ -51,5 +51,13 @@ namespace Society.Infrastructure.Repositories
         {
             return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
         }
+
+        public async Task<User?> GetUserWithProfileAsync(int userId)
+        {
+            return await _context.Users
+                .Include(u => u.Profile)
+                 .Include(u => u.Person)
+                .FirstOrDefaultAsync(u => u.Id == userId);
+        }
     }
 }

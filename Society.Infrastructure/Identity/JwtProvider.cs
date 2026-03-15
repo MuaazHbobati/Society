@@ -16,7 +16,7 @@ namespace Society.Infrastructure.Identity
             _config = config;
         }
 
-        public string GenerateToken(Guid userId, string email)
+        public string GenerateToken(int userId, string email)
         {
             var claims = new[]
             {

@@ -11,7 +11,7 @@ namespace Society.Domain.Entities
     public class UserProfile
     {
         [Key, ForeignKey("User")]
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
         public User User { get; set; } = null!;
         public string? Bio {  get; set; }
         public string? University { get; set; }
@@ -20,6 +20,7 @@ namespace Society.Domain.Entities
         public string? City { get; set; }
         public string? Country { get; set; }
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+        public string? ProfilePictureUrl { get; set; }
 
     }
 }

@@ -31,7 +31,7 @@ namespace Society.Api.Controllers
                 return Unauthorized();
             }
 
-            await _userProfileService.UpdateMyUserProfileAsync(Guid .Parse(userId), dto);
+            await _userProfileService.UpdateMyUserProfileAsync(int .Parse(userId), dto);
             return Ok(new { message = " Prfile updated successfully"});
         }
 
@@ -45,7 +45,7 @@ namespace Society.Api.Controllers
             }
 
 
-            var profile = await _userProfileService.GetMyProfileAsync(Guid .Parse(userId));
+            var profile = await _userProfileService.GetMyProfileAsync(int .Parse(userId));
             if (profile == null)
             {
                 return NotFound();

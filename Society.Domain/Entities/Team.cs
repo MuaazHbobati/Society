@@ -8,11 +8,11 @@ namespace Society.Domain.Entities
 {
     public class Team
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public Guid FormationId { get; set; }
+        public int FormationId { get; set; }
 
-        public Guid ProgramSubjectId { get; set; }
+        public int ProgramSubjectId { get; set; }
 
         public string Title { get; set; }
 

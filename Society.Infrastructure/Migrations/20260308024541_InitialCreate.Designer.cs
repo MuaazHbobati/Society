@@ -12,8 +12,8 @@ using Society.Infrastructure.Data;
 namespace Society.Infrastructure.Migrations
 {
     [DbContext(typeof(SocietyDbContext))]
-    [Migration("20260212022903_InitDatabase")]
-    partial class InitDatabase
+    [Migration("20260308024541_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,9 +27,11 @@ namespace Society.Infrastructure.Migrations
 
             modelBuilder.Entity("Society.Domain.Entities.Person", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2");
@@ -62,9 +64,11 @@ namespace Society.Infrastructure.Migrations
 
             modelBuilder.Entity("Society.Domain.Entities.Program", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -74,26 +78,21 @@ namespace Society.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Programs");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            Name = "Information Technology Engineering"
-                        });
                 });
 
             modelBuilder.Entity("Society.Domain.Entities.ProgramSubject", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("ProgramId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<Guid>("SubjectId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ProgramId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SubjectId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -103,75 +102,15 @@ namespace Society.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("ProgramSubjects");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("9b8e70b7-8561-467f-bdb5-f88ecc23feab"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000001")
-                        },
-                        new
-                        {
-                            Id = new Guid("fe82ce59-0cd4-4b86-b12d-81397508b1d5"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000002")
-                        },
-                        new
-                        {
-                            Id = new Guid("45f449cc-1d36-47c7-9252-272214e68904"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000003")
-                        },
-                        new
-                        {
-                            Id = new Guid("dc2d091f-5088-4067-b053-cf5b9cffb396"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000004")
-                        },
-                        new
-                        {
-                            Id = new Guid("54a5b878-f801-4023-b2c4-f2384c34b592"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000005")
-                        },
-                        new
-                        {
-                            Id = new Guid("49b182a5-a099-47f4-b3e8-3e18f02f728e"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000006")
-                        },
-                        new
-                        {
-                            Id = new Guid("b21bb3c7-2869-46d5-a7fb-7f97a8a82c99"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000007")
-                        },
-                        new
-                        {
-                            Id = new Guid("e8af1649-309f-4aba-a7f3-3aef954ac753"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000008")
-                        },
-                        new
-                        {
-                            Id = new Guid("83aedf3c-7601-43f9-9d78-b57b784174b4"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000009")
-                        },
-                        new
-                        {
-                            Id = new Guid("c8497aba-6cf8-4939-90d2-c51877620c8e"),
-                            ProgramId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            SubjectId = new Guid("20000000-0000-0000-0000-000000000010")
-                        });
                 });
 
             modelBuilder.Entity("Society.Domain.Entities.Subject", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -186,84 +125,24 @@ namespace Society.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Subjects");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000001"),
-                            Code = "BPG401",
-                            Name = "Web Programming 1"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000002"),
-                            Code = "BPG402",
-                            Name = "Web Programming 2"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000003"),
-                            Code = "DBS301",
-                            Name = "Databases"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000004"),
-                            Code = "ALG201",
-                            Name = "Algorithms"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000005"),
-                            Code = "OOP101",
-                            Name = "OOP"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000006"),
-                            Code = "NET101",
-                            Name = "Networking"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000007"),
-                            Code = "SEC201",
-                            Name = "Cyber Security"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000008"),
-                            Code = "AI101",
-                            Name = "Intro to AI"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000009"),
-                            Code = "SE201",
-                            Name = "Software Engineering"
-                        },
-                        new
-                        {
-                            Id = new Guid("20000000-0000-0000-0000-000000000010"),
-                            Code = "OS301",
-                            Name = "Operating Systems"
-                        });
                 });
 
             modelBuilder.Entity("Society.Domain.Entities.Team", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("FormationId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("FormationId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("ProgramSubjectId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ProgramSubjectId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -282,15 +161,17 @@ namespace Society.Infrastructure.Migrations
 
             modelBuilder.Entity("Society.Domain.Entities.TeamFormation", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("CreatorId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("CreatorId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CurrentMembersCount")
                         .HasColumnType("int");
@@ -303,8 +184,8 @@ namespace Society.Infrastructure.Migrations
                     b.Property<int>("MaxMembers")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("ProgramSubjectId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ProgramSubjectId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -325,18 +206,20 @@ namespace Society.Infrastructure.Migrations
 
             modelBuilder.Entity("Society.Domain.Entities.TeamMember", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("TeamId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("TeamId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -350,9 +233,11 @@ namespace Society.Infrastructure.Migrations
 
             modelBuilder.Entity("Society.Domain.Entities.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -371,8 +256,8 @@ namespace Society.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PersonId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -388,8 +273,8 @@ namespace Society.Infrastructure.Migrations
 
             modelBuilder.Entity("Society.Domain.Entities.UserProfile", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Bio")
                         .HasColumnType("nvarchar(max)");
@@ -404,6 +289,9 @@ namespace Society.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Major")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfilePictureUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("University")

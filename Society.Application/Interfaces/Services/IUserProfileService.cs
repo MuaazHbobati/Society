@@ -10,8 +10,8 @@ namespace Society.Application.Interfaces.Services
 {
     public interface IUserProfileService
     {
-        Task UpdateMyUserProfileAsync(Guid userId, UpdateUserProfileDto dto);
-        Task<UserProfileDto> GetMyProfileAsync(Guid userId);
+        Task UpdateMyUserProfileAsync(int userId, UpdateUserProfileDto dto);
+        Task<UserProfileDto> GetMyProfileAsync(int userId);
 
     }
 }

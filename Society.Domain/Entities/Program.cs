@@ -8,7 +8,7 @@ namespace Society.Domain.Entities
 {
     public class Program
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
 
         public ICollection<ProgramSubject> ProgramSubjects { get; set; } = new List<ProgramSubject>();

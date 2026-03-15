@@ -7,8 +7,8 @@ namespace Society.Application.Interfaces.Services.TeamSystem.TeamFormation
 {
     public interface ITeamFormationService
     {
-        Task<TeamFormationDetailsDto> CreateAsync(CreateTeamFormationDto dto, Guid creatorId);
+        Task<TeamFormationDetailsDto> CreateAsync(CreateTeamFormationDto dto, int creatorId);
         Task<List<TeamFormationListDto>> GetAllAsync();
-        Task<TeamFormationDetailsDto> GetByIdAsync(Guid id);
+        Task<TeamFormationDetailsDto> GetByIdAsync(int id);
     }
 }

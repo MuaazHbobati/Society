@@ -18,7 +18,7 @@ namespace Society.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<UserProfile?> GetByUserIdAsync(Guid userId)
+        public async Task<UserProfile?> GetByUserIdAsync(int userId)
         {
             return await _context.UserProfiles.FirstOrDefaultAsync(x => x.UserId == userId);
         }

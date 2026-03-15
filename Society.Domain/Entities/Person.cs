@@ -11,7 +11,7 @@ namespace Society.Domain.Entities
     public class Person
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required, MaxLength(100)]
         public string FirstName { get; set; } = null;

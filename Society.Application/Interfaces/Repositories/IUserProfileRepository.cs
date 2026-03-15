@@ -9,7 +9,7 @@ namespace Society.Application.Interfaces.Repositories
 {
     public interface IUserProfileRepository
     {
-        Task<UserProfile?> GetByUserIdAsync(Guid userId);
+        Task<UserProfile?> GetByUserIdAsync(int userId);
         Task UpdateAsync(UserProfile profile);
     }
 }

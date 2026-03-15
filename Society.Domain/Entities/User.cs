@@ -11,10 +11,10 @@ namespace Society.Domain.Entities
     public class User
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        public Guid PersonId { get; set; }
+        public int PersonId { get; set; }
         [ForeignKey("PersonId")]
         public Person Person { get; set; } = null!;
 
@@ -26,6 +26,9 @@ namespace Society.Domain.Entities
         public bool IsActive { get; set; } = true;
         public DateTime LastLoginAt { get; set; }
         public UserProfile? Profile { get; set; }
-       
+
+        public ICollection<TeamMember> TeamMemberships { get; set; }
+        public ICollection<TeamFormation> CreatedTeamFormations { get; set; }
+
     }
 }

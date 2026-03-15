@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,11 @@ namespace Society.Domain.Entities
 {
     public class TeamFormation
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        public Guid CreatorId { get; set; }
+        public int CreatorId { get; set; }
 
-        public Guid ProgramSubjectId { get; set; }
+        public int ProgramSubjectId { get; set; }
 
         public string Title { get; set; }
         public string Description { get; set; }
@@ -27,9 +28,14 @@ namespace Society.Domain.Entities
         public int CurrentMembersCount { get; set; } = 1;
 
         // Navigation
+        [ForeignKey("CreatorId")]
+        public User Creator { get; set; }
+
         public ProgramSubject ProgramSubject { get; set; }
 
         public Team? Team { get; set; }
+
+         
     }
 
 }

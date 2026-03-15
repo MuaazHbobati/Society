@@ -28,43 +28,41 @@ namespace Society.Infrastructure.Data
             // Apply entity configurations
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SocietyDbContext).Assembly);
 
-            // --- Seed Data ---
-            var iteId = Guid.Parse("11111111-1111-1111-1111-111111111111");
-
-            // Programs
-            modelBuilder.Entity<Program>().HasData(
-                new Program
-                {
-                    Id = iteId,
-                    Name = "Information Technology Engineering"
-                }
-            );
-
-            // Subjects
-            var subjects = new List<Subject>
-            {
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000001"), Code="BPG401", Name="Web Programming 1" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000002"), Code="BPG402", Name="Web Programming 2" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000003"), Code="DBS301", Name="Databases" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000004"), Code="ALG201", Name="Algorithms" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000005"), Code="OOP101", Name="OOP" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000006"), Code="NET101", Name="Networking" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000007"), Code="SEC201", Name="Cyber Security" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000008"), Code="AI101", Name="Intro to AI" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000009"), Code="SE201", Name="Software Engineering" },
-                new Subject { Id = Guid.Parse("20000000-0000-0000-0000-000000000010"), Code="OS301", Name="Operating Systems" }
-            };
-            modelBuilder.Entity<Subject>().HasData(subjects);
-
-            var programSubjects = subjects.Select(s => new ProgramSubject
-            {
-                Id = Guid.NewGuid(),
-                ProgramId = iteId,
-                SubjectId = s.Id
-            }).ToList();
-            modelBuilder.Entity<ProgramSubject>().HasData(programSubjects);
-
+           
             base.OnModelCreating(modelBuilder);
+
+            // علاقة TeamFormation مع User (Creator)
+            modelBuilder.Entity<TeamFormation>()
+                .HasOne(tf => tf.Creator)
+                .WithMany(u => u.CreatedTeamFormations)
+                .HasForeignKey(tf => tf.CreatorId)
+                .OnDelete(DeleteBehavior.Restrict); // منع حذف المستخدم إذا عنده formations
+
+            // علاقة TeamFormation مع Team (one-to-one)
+            modelBuilder.Entity<TeamFormation>()
+                .HasOne(tf => tf.Team)
+                .WithOne(t => t.Formation)
+                .HasForeignKey<Team>(t => t.FormationId)
+                .OnDelete(DeleteBehavior.Cascade); // إذا حذفنا التشكيل، ينحذف الفريق
+
+            // علاقة TeamMember مع Team
+            modelBuilder.Entity<TeamMember>()
+                .HasOne(tm => tm.Team)
+                .WithMany(t => t.Members)
+                .HasForeignKey(tm => tm.TeamId)
+                .OnDelete(DeleteBehavior.Cascade); // إذا حذفنا الفريق، ينحذف الأعضاء
+
+            // علاقة TeamMember مع User
+            modelBuilder.Entity<TeamMember>()
+                .HasOne(tm => tm.User)
+                .WithMany(u => u.TeamMemberships)
+                .HasForeignKey(tm => tm.UserId)
+                .OnDelete(DeleteBehavior.Restrict); // منع حذف المستخدم إذا هو عضو بفريق
+
+            // منع duplicate entries (نفس المستخدم ما يقدر ينضم لنفس الفريق مرتين)
+            modelBuilder.Entity<TeamMember>()
+                .HasIndex(tm => new { tm.TeamId, tm.UserId })
+                .IsUnique();
         }
     }
 }

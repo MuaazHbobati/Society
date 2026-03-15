@@ -10,7 +10,7 @@ namespace Society.Application.Interfaces.Repositories.TeamSystem
     public interface ITeamFormationRepository
     {
         Task AddAsync(TeamFormation formation);
-        Task<TeamFormation> GetByIdAsync(Guid id);
+        Task<TeamFormation> GetByIdAsync(int id);
         Task<List<TeamFormation>> GetAllAsync();
         Task SaveChangesAsync();
     }

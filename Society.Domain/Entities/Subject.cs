@@ -8,7 +8,7 @@ namespace Society.Domain.Entities
 {
     public class Subject
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
 

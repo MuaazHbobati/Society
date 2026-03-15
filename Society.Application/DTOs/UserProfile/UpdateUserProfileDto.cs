@@ -8,10 +8,12 @@ namespace Society.Application.DTOs.UserProfile
 {
     public class UpdateUserProfileDto
     {
-        public string Bio { get; set; } = null!;
-        public string Major { get; set; } = null!;
-        public string Faculty { get; set; } = null!;
-        public string University { get; set; } = null!;
-        public string City { get; set; } = null!;
+        public string? Bio { get; set; }
+        public string? Major { get; set; }
+        public string? Faculty { get; set; }
+        public string? University { get; set; }
+        public string? City { get; set; }
+        public string? Country { get; set; }
+        public string? ProfilePictureUrl { get; set; }
     }
 }

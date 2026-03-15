@@ -16,5 +16,7 @@ namespace Society.Application.Interfaces.Repositories
         Task<bool> isUsernameExistAsync(string username);
         Task<bool> isEmailExistAsync(string email);
         Task<User> GetUserByEmailAsync(string email);
+
+        Task<User?> GetUserWithProfileAsync(int userId);
     }
 }

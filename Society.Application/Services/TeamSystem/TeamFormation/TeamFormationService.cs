@@ -25,11 +25,10 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             _repository = repository;
         }
 
-        public async Task<TeamFormationDetailsDto> CreateAsync(CreateTeamFormationDto dto, Guid creatorId)
+        public async Task<TeamFormationDetailsDto> CreateAsync(CreateTeamFormationDto dto, int creatorId)
         {
             var formation = new Society.Domain.Entities.TeamFormation
             {
-                Id = Guid.NewGuid(),
                 CreatorId = creatorId,
                 ProgramSubjectId = dto.SubjectId,
                 Title = dto.Title,
@@ -54,7 +53,9 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             return formations.Select(f => new TeamFormationListDto
             {
                 Id = f.Id,
+                CreatorId = f.CreatorId,
                 Title = f.Title,
+                Description = f.Description,
                 ProgramName = f.ProgramSubject.Program.Name,
                 SubjectName = f.ProgramSubject.Subject.Name,
                 MaxMembers = f.MaxMembers,
@@ -63,7 +64,7 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             }).ToList();
         }
 
-        public async Task<TeamFormationDetailsDto> GetByIdAsync(Guid id)
+        public async Task<TeamFormationDetailsDto> GetByIdAsync(int id)
         {
             var formation = await _repository.GetByIdAsync(id);
 
@@ -81,8 +82,8 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
                 Id = formation.Id,
                 Title = formation.Title,
                 Description = formation.Description,
-                ProgramName = "اسم البرنامج لاحقاً من ProgramSubject/Program",
-                SubjectName = "اسم المادة لاحقاً من ProgramSubject/Subject",
+                ProgramName = formation.ProgramSubject.Program.Name,
+                SubjectName = formation.ProgramSubject.Subject.Name,
                 MaxMembers = formation.MaxMembers,
                 CurrentMembersCount = formation.CurrentMembersCount,
                 Status = formation.Status

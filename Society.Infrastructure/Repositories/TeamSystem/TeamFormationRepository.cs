@@ -34,7 +34,7 @@ namespace Society.Infrastructure.Repositories.TeamSystem
         }
 
 
-        public async Task<TeamFormation> GetByIdAsync(Guid id)
+        public async Task<TeamFormation> GetByIdAsync(int id)
         {
             return await _context.TeamFormations
                 .Include(tf => tf.ProgramSubject)

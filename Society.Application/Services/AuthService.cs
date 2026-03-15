@@ -34,10 +34,10 @@ namespace Society.Application.Services
                 throw new Exception("Invalid email or password");
             }
 
-            //if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
-            //{
-            //    throw new Exception("Invalid email or password");
-            //}
+            if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+            {
+                throw new Exception("Invalid email or password");
+            }
 
             var Token = _jwtProvider.GenerateToken(user.Id, user.Email);
 
@@ -62,7 +62,6 @@ namespace Society.Application.Services
 
             var person = new Person()
             {
-                Id = Guid.NewGuid(),
                 FirstName = dto.FirstName,
                 FatherName = dto.FatherName,
                 LastName = dto.LastName,
@@ -73,7 +72,6 @@ namespace Society.Application.Services
 
             var user = new User()
             {
-                Id = Guid.NewGuid(),
                 PersonId = person.Id,
                 Username = dto.Username,
                 PasswordHash = HashPassword(dto.Password),

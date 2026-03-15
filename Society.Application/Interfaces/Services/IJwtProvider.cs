@@ -8,6 +8,6 @@ namespace Society.Application.Interfaces.Services
 {
     public interface IJwtProvider
     {
-        string GenerateToken(Guid userId, string email);
+        string GenerateToken(int userId, string email);
     }
 }

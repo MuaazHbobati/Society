@@ -15,10 +15,10 @@ namespace Society.Application.DTOs.TeamSystem.TeamFormation
         public string Description { get; set; }
 
         [Required]
-        public Guid ProgramId { get; set; }
+        public int ProgramId { get; set; }
 
         [Required]
-        public Guid SubjectId { get; set; }
+        public int SubjectId { get; set; }
 
         [Range(1, 20)]
         public int MaxMembers { get; set; } = 2;

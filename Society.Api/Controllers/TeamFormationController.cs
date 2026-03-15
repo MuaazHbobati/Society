@@ -31,7 +31,7 @@ namespace Society.Api.Controllers
 
         // GET: api/TeamFormation/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<TeamFormationDetailsDto>> GetById(Guid id)
+        public async Task<ActionResult<TeamFormationDetailsDto>> GetById(int id)
         {
             try
             {
@@ -55,12 +55,15 @@ namespace Society.Api.Controllers
                 return Unauthorized(new { message = "User not found in token" });
             }
 
-            Guid creatorId = Guid.Parse(userIdClaim);
+            int creatorId = int.Parse(userIdClaim);
 
             var formation = await _service.CreateAsync(dto, creatorId);
 
             // نرجع CreatedAtAction مع الـ id الجديد
             return CreatedAtAction(nameof(GetById), new { id = formation.Id }, formation);
         }
+
+
     }
 }
+
