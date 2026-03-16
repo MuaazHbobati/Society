@@ -1,0 +1,52 @@
+* {
+  font-family: Tajawal;
+    margin: 0;
+  padding: 0;
+}
+.a {
+  text-decoration: none;
+  color: white;
+  font-weight: 550;
+}
+
+.a:hover {
+  color: var(--primary-very-light);
+}
+
+.a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+body {
+  direction: rtl;
+  padding-top: 80px;
+  background-color: var(--blue-dark);
+}
+html {
+  scroll-padding-top: 80px; /*Header hight*/
+  scroll-behavior: smooth;
+}
+body.menu-open {
+  overflow: hidden;
+}
+
+/*Responsive padding for Header hight*/
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 65px;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    padding-top: 60px;
+  }
+}

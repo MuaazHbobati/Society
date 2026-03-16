@@ -1,0 +1,252 @@
+/* src/shared/styles/forms.css */
+
+.form-container {
+  
+  margin: 0 auto;
+  padding: 24px 22px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  direction: rtl;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--blue-dark);
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: -0.2px;
+}
+.form-ahref {
+  font-size: 15px;
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+/* Grid نظامي للحقول */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.form-grid .form-group {
+  margin-bottom: 0;
+}
+
+.form-col-full {
+  grid-column: span 2;
+}
+
+.form-col-half {
+  grid-column: span 1;
+}
+
+/* مجموعة الحقول */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: var(--gray-dark);
+  font-size: 12px;
+  padding-right: 4px;
+}
+
+/* الحقول */
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--black);
+  background: var(--off-white);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.05);
+  background: var(--white);
+}
+
+.form-input::placeholder {
+  color: var(--gray-medium);
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* حالة الخطأ */
+.form-input.error {
+  border-color: var(--error);
+  background: rgba(239, 68, 68, 0.02);
+}
+
+.form-error-text {
+  display: block;
+  color: var(--error);
+  font-size: 11px;
+  margin-top: 3px;
+  padding-right: 5px;
+  line-height: 1.3;
+}
+
+.form-error.api-error {
+  background: rgba(239, 68, 68, 0.03);
+  color: var(--error);
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  text-align: center;
+  border: 1px solid rgba(239, 68, 68, 0.1);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* الأزرار */
+.form-button {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  background: var(--primary-blue);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.form-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+}
+
+.form-button:active {
+  transform: translateY(0);
+}
+
+.form-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--gray-medium);
+  transform: none;
+  box-shadow: none;
+}
+
+.form-button.secondary {
+  background: transparent;
+  color: var(--primary-blue);
+  border: 1.5px solid var(--primary-blue);
+}
+
+.form-button.secondary:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
+/* صف الأزرار */
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.form-row .form-button {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* أحجام الفورم */
+.form-container.large {
+  max-width: 600px;
+  padding: 28px 24px;
+}
+
+.form-container.small {
+  max-width: 380px;
+  padding: 20px 18px;
+}
+
+.form-container.small .form-title {
+  font-size: 22px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .form-container {
+    max-width: 500px;
+    padding: 20px 16px;
+  }
+
+  .form-title {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .form-col-full,
+  .form-col-half {
+    grid-column: span 1;
+  }
+
+  .form-input {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .form-button {
+    padding: 9px 12px;
+    font-size: 14px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+}
+/* أضف في ملف CSS العام أو في ملف الفورم */
+.form-input select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  background-size: 1em;
+  padding-left: 2.5rem;
+}
+
+.loading-text {
+  font-size: 0.85rem;
+  color: var(--gray-medium);
+  margin-top: 4px;
+  display: block;
+}
+
+select:disabled {
+  background-color: var(--gray-light);
+  cursor: not-allowed;
+  opacity: 0.7;
+}

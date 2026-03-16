@@ -1,0 +1,33 @@
+.login-form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--off-white) 0%, var(--white) 100%);
+}
+
+.login-form-wrapper .form-container {
+  max-width: 450px;
+  width: 100%;
+  margin: 0;
+}
+
+/* نفس تنسيقات RegisterForm */
+.form-error.api-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid var(--error);
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .login-form-wrapper {
+    padding: 60px 15px;
+  }
+}

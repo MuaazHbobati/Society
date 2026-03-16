@@ -1,0 +1,145 @@
+ 
+
+/* متغيرات خاصة بالتخطيط (يمكن نقلها لملف منفصل إذا أردت) */
+:root {
+  --sidebar-width: 280px;
+  --content-gap: 24px;
+  --header-height: 70px;
+  --border-radius: 16px;
+}
+
+/* الصفحة الرئيسية */
+.home-page {
+  background-color: var(--background);
+  min-height: 100vh;
+  padding-top:  20px;
+  padding-bottom: 40px;
+}
+
+/* الحاوية التي تحد من العرض وتطبق الـ grid */
+.home-page__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: var(--content-gap);
+  align-items: start;
+  direction: rtl;
+}
+
+.Welcome{
+  font-weight: 550;
+  font-size: 30px;
+}
+
+/* العمود الجانبي (ثابت عند التمرير) */
+.home-page__sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+  align-self: start;
+}
+
+/* العمود الرئيسي للمحتوى */
+.home-page__content {
+  background-color: transparent;
+  padding: 24px;
+  min-height: 300vh;
+}
+
+/* === تحسينات Responsive === */
+
+/* شاشات كبيرة (992px - 1200px) */
+@media (max-width: 1200px) {
+  .home-page__container {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 992px) {
+  .home-page__container {
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+  }
+}
+
+/* شاشات تابلت (حتى 768px) - يبقى عمودين مع sticky */
+@media (max-width: 768px) {
+  .home-page__container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .home-page__sidebar {
+    position: static; /* إلغاء التثبيت */
+    margin-bottom: 16px;
+  }
+
+  .home-page__content {
+    padding: 20px;
+  }
+}
+
+/* شاشات موبايل صغيرة (حتى 480px) */
+@media (max-width: 480px) {
+  .home-page__container {
+    padding: 0 12px;
+  }
+
+  .home-page__content {
+    padding: 0;
+  }
+}
+
+/* === حالات التحميل والخطأ === */
+
+.home-page__loading,
+.home-page__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+  text-align: center;
+}
+
+/* دائرة التحميل */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* رسالة الخطأ */
+.home-page__error p {
+  color: var(--error);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.home-page__error button {
+  padding: 10px 24px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.home-page__error button:hover {
+  background-color: var(--primary-dark);
+}

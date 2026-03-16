@@ -1,0 +1,48 @@
+@import './colors.css'; 
+
+.Input {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 10px 16px;
+  border: 2px solid var(--gray-light);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+  font-size: 16px;
+   box-sizing: border-box;
+  font-family: inherit;
+  
+}
+
+.Input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+  transform: translateY(-2px);
+}
+
+.Input:hover {
+  border-color: var(--gray-medium);
+  background-color: var(--off-white);
+}
+
+.Input::placeholder {
+  color: var(--gray-medium);
+  font-size: 15px;
+}
+
+/* حالة الخطأ */
+.Input.error {
+  border-color: var(--error);
+}
+
+.Input.error:focus {
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+}
+
+/* حالة التعطيل */
+.Input:disabled {
+  background-color: var(--gray-light);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+

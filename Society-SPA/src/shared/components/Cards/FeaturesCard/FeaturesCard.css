@@ -1,0 +1,16 @@
+.featurescard-container {
+  background: var(--off-white);
+}
+
+.featurescard-icon {
+  margin: 25px;
+}
+
+.featurescard-titel {
+  color: var(--blue);
+  
+}
+
+.featurescard-sub-titel {
+  color: var(--blue-dark);
+}

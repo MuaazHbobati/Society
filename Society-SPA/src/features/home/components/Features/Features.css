@@ -1,0 +1,143 @@
+.features-container {
+  background: var(--gray-dark);
+  min-height: 100vh;
+  padding: 80px 20px;
+}
+
+.features-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-title {
+  color: var(--off-white);
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 60px;
+  opacity: 0;
+  animation: titleFadeIn 1s ease-out forwards;
+}
+
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* أنماط الكارد - موجودة في FeaturesCard.css لكن نضيفها هنا للتوضيح */
+.featurescard-container {
+  background: var(--off-white);
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+  
+  /* حالة البداية للأنميشن */
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.featurescard-container.card-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.featurescard-container:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2);
+}
+
+.featurescard-icon {
+  font-size: 48px;
+  margin: 0;
+  background: rgba(0, 123, 255, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.featurescard-container:hover .featurescard-icon {
+  transform: scale(1.1);
+  background: rgba(0, 123, 255, 0.2);
+}
+
+.featurescard-titel {
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.featurescard-container:hover .featurescard-titel {
+  color: var(--blue-dark);
+}
+
+.featurescard-sub-titel {
+  color: var(--blue-dark);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 10px;
+  transition: color 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .features-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .featurescard-container {
+    width: 260px;
+    padding: 25px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .features-title {
+    font-size: 28px;
+  }
+  
+  .features-grid {
+    gap: 20px;
+  }
+  
+  .featurescard-container {
+    width: 100%;
+    max-width: 320px;
+  }
+}

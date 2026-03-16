@@ -1,0 +1,76 @@
+/* src/features/auth/components/RegisterForm/RegisterForm.css */
+
+.register-form-wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--off-white) 0%, var(--white) 100%);
+}
+
+.register-form-wrapper .form-container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.form-col-full {
+  grid-column: span 2;
+}
+
+.form-col-half {
+  grid-column: span 1;
+}
+
+.form-error-text {
+  display: block;
+  color: var(--error);
+  font-size: 12px;
+  margin-top: 4px;
+  padding-right: 5px;
+}
+
+.form-error.api-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid var(--error);
+  font-weight: 500;
+}
+
+.form-button.secondary {
+  background: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+}
+
+.form-button.secondary:hover {
+  background: var(--primary-blue);
+  color: var(--white);
+}
+
+@media (max-width: 576px) {
+  .register-form-wrapper {
+    padding: 60px 15px;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-col-full,
+  .form-col-half {
+    grid-column: span 1;
+  }
+}

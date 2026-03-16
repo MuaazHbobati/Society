@@ -1,0 +1,11 @@
+.login-page-container {
+  width: 100%;
+  background: var(--off-white);
+  
+  /* ✅ أضف هالأسطر عشان الفورم يتوسط */
+  display: flex;
+  align-items: center;       /* عمودي */
+  justify-content: center;    /* أفقي */
+  padding: 20px;              /* مسافة للأطراف */
+  box-sizing: border-box;
+}
