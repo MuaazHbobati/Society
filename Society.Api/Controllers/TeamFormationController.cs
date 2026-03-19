@@ -11,7 +11,7 @@ namespace Society.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // لازم تسجيل دخول لكل الأفعال هنا
+    [Authorize]
     public class TeamFormationController : ControllerBase
     {
         private readonly ITeamFormationService _service;
@@ -48,21 +48,15 @@ namespace Society.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<TeamFormationDetailsDto>> Create([FromBody] CreateTeamFormationDto dto)
         {
-            // 🔹 نجيب الـ creatorId من الـ JWT Token
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userIdClaim == null)
             {
                 return Unauthorized(new { message = "User not found in token" });
             }
-
             int creatorId = int.Parse(userIdClaim);
-
             var formation = await _service.CreateAsync(dto, creatorId);
-
-            // نرجع CreatedAtAction مع الـ id الجديد
             return CreatedAtAction(nameof(GetById), new { id = formation.Id }, formation);
         }
-
 
     }
 }
