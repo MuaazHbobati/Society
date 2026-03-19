@@ -48,5 +48,13 @@ namespace Society.Infrastructure.Repositories.TeamSystem
         {
             await _context.SaveChangesAsync();
         }
+
+        public async Task<int?> GetProgramSubjectIdAsync(int programId, int subjectId)
+        {
+            var programSubject = await _context.ProgramSubjects
+                .FirstOrDefaultAsync(ps => ps.ProgramId == programId && ps.SubjectId == subjectId);
+
+            return programSubject?.Id;
+        }
     }
 }
