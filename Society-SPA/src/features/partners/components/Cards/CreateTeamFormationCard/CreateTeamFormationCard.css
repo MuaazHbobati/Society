@@ -1,38 +1,17 @@
 /* features/partners/components/Cards/CreateTeamFormationCard/CreateTeamFormationCard.css */
+
 .create-formation-card {
   width: 100%;
   background-color: var(--card-bg, #ffffff);
-  border-radius: 12px;
-  box-shadow: var(--shadow-sm, 0px 4px 6px rgba(0, 0, 0, 0.05));
-  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.02);
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .create-formation-card:hover {
-  box-shadow: var(--shadow-blue, 0px 4px 12px rgba(37, 99, 235, 0.2));
-}
-
-/* زر الفتح */
-.create-trigger {
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: linear-gradient(135deg, var(--primary-blue, #2563eb) 0%, var(--primary-dark, #1e40af) 100%);
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.create-trigger:hover {
-  background: linear-gradient(135deg, var(--primary-dark, #1e40af) 0%, var(--primary-blue, #2563eb) 100%);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 25px rgba(37, 99, 235, 0.1);
 }
 
 .plus-icon {
@@ -53,128 +32,17 @@
   text-align: center;
 }
 
-/* مجموعات الفورم */
-.form-group {
-  margin-bottom: 16px;
+/* كلاسات مخصصة للتحميل */
+.loading-text {
+  font-size: 0.85rem;
+  color: var(--gray-medium, #64748b);
+  margin-top: 4px;
+  display: block;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-/* الحقول */
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color, #e2e8f0);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  background-color: var(--off-white, #f8fafc);
-  font-family: inherit;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary-blue, #2563eb);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  background-color: var(--white, #ffffff);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-/* أزرار الفورم */
-.form-actions {
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.cancel-btn,
-.submit-btn {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.cancel-btn {
-  background-color: var(--gray-light, #e2e8f0);
-  color: var(--gray-dark, #334155);
-}
-
-.cancel-btn:hover {
-  background-color: var(--gray-medium, #94a3b8);
-  color: white;
-}
-
-.submit-btn {
-  background-color: var(--primary-blue, #2563eb);
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.submit-btn:hover:not(:disabled) {
-  background-color: var(--primary-dark, #1e40af);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-blue, 0px 4px 12px rgba(37, 99, 235, 0.3));
-}
-
-.submit-btn:disabled {
-  opacity: 0.6;
+/* تجاوزات بسيطة للـ select */
+select.form-input:disabled {
+  background-color: var(--gray-light, #f1f5f9);
   cursor: not-allowed;
-}
-
-/* تأثير تحميل */
-.submit-btn.loading {
-  position: relative;
-  color: transparent;
-}
-
-.submit-btn.loading::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 2px solid white;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: button-spin 0.8s linear infinite;
-}
-
-@keyframes button-spin {
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  
-  .form-actions {
-    flex-direction: column;
-  }
-  
-  .create-trigger {
-    padding: 16px;
-    font-size: 1rem;
-  }
+  opacity: 0.7;
 }

@@ -56,20 +56,7 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      <div
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          display: "flex",
-        }}
-      >
-        {
-          <h1 className="Welcome">
-            {" "}
-            أهلاً {user?.firstName} {user?.lastName}{" "}
-          </h1>
-        }
-      </div>
+     
       <div className="home-page__container">
         <aside className="home-page__sidebar">
           <UserProfileCard user={user} showEdit={true} />

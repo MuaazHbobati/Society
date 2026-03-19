@@ -10,7 +10,7 @@
 
 /* الصفحة الرئيسية */
 .home-page {
-  background-color: var(--background);
+  background-color: var(--background2);
   min-height: 100vh;
   padding-top:  20px;
   padding-bottom: 40px;

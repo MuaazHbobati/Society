@@ -5,6 +5,7 @@ const TeamFormationCard = ({ formation }) => {
   const {
     title,
     description,
+    className, // ✅ أضف هذا
     programName,
     subjectName,
     maxMembers,
@@ -19,38 +20,47 @@ const TeamFormationCard = ({ formation }) => {
   const statusClass = status === 0 ? "open" : status === 1 ? "full" : "closed";
 
   return (
-    <div className="formation-card"> {/* تغيير هنا */}
-      <div className="card-header"> {/* أضف هذا */}
-        <h4 className="card-title">{title}</h4> {/* أضف className */}
-        <span className={`status-badge ${statusClass}`}> {/* أضف هذا */}
-        
+    <div className="formation-card">
+      <div className="card-header">
+        <h4 className="card-title">{title}</h4>
+        <span className={`status-badge ${statusClass}`}>
           {statusText}
         </span>
       </div>
-<span className="detail-label">الوصف:</span>
-      <p className="card-description">{description}</p> {/* أضف className */}
+      
+      <span className="detail-label">الوصف:</span>
+      <p className="card-description">{description}</p>
 
-      <div className="card-details"> {/* أضف هذا */}
-        <div className="detail-item"> {/* أضف هذا */}
+      {/* ✅ إضافة حقل الصف */}
+      <div className="card-details">
+
+        <div className="detail-item">
+          <span className="detail-label">الصف:</span>
+          <span className="detail-value">{className}</span>
+        </div>
+
+        <div className="detail-item">
           <span className="detail-label">البرنامج:</span>
           <span className="detail-value">{programName}</span>
         </div>
+
         <div className="detail-item">
           <span className="detail-label">المادة:</span>
           <span className="detail-value">{subjectName}</span>
         </div>
+
       </div>
 
-      <div className="members-section"> {/* أضف هذا */}
+      <div className="members-section">
         <div className="members-header">
           <span className="members-count">
             <span className="current">{currentMembersCount}</span>/{maxMembers}
           </span>
           <span className="members-label">أعضاء</span>
         </div>
-        </div>
+      </div>
 
-        <button  className="normalButton">انضمام</button>
+      <button className="normalButton">انضمام</button>
     </div>
   );
 };
