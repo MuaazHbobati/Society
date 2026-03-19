@@ -14,6 +14,8 @@ namespace Society.Application.DTOs.TeamSystem.TeamFormation
         public int CreatorId { get; set; }
         public string Title { get; set; }
 
+        public string ClassName { get; set; }
+
         public string Description { get; set; }
 
         public string ProgramName { get; set; }

@@ -27,23 +27,34 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
 
         public async Task<TeamFormationDetailsDto> CreateAsync(CreateTeamFormationDto dto, int creatorId)
         {
+
+            var programSubjectId = await _repository.GetProgramSubjectIdAsync(dto.ProgramId, dto.SubjectId);
+
+            if (programSubjectId == null)
+            {
+                throw new Exception("البرنامج والمادة غير متوافقين");
+            }
+
+
             var formation = new Society.Domain.Entities.TeamFormation
             {
                 CreatorId = creatorId,
-                ProgramSubjectId = dto.SubjectId,
+                ProgramSubjectId = programSubjectId.Value,  
                 Title = dto.Title,
                 Description = dto.Description,
+                ClassName = dto.ClassName,
                 MaxMembers = dto.MaxMembers,
                 CreatedAt = DateTime.UtcNow,
                 Status = Domain.Enums.TeamFormationStatus.Open,
                 CurrentMembersCount = 1
-
             };
 
             await _repository.AddAsync(formation);
             await _repository.SaveChangesAsync();
 
-            return MapToDetailsDto(formation);
+            var createdFormation = await _repository.GetByIdAsync(formation.Id);
+
+            return MapToDetailsDto(createdFormation);
         }
 
         public async Task<List<TeamFormationListDto>> GetAllAsync()
@@ -56,6 +67,7 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
                 CreatorId = f.CreatorId,
                 Title = f.Title,
                 Description = f.Description,
+                ClassName = f.ClassName,
                 ProgramName = f.ProgramSubject.Program.Name,
                 SubjectName = f.ProgramSubject.Subject.Name,
                 MaxMembers = f.MaxMembers,
@@ -82,6 +94,7 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
                 Id = formation.Id,
                 Title = formation.Title,
                 Description = formation.Description,
+                ClassName = formation.ClassName,
                 ProgramName = formation.ProgramSubject.Program.Name,
                 SubjectName = formation.ProgramSubject.Subject.Name,
                 MaxMembers = formation.MaxMembers,

@@ -13,5 +13,6 @@ namespace Society.Application.Interfaces.Repositories.TeamSystem
         Task<TeamFormation> GetByIdAsync(int id);
         Task<List<TeamFormation>> GetAllAsync();
         Task SaveChangesAsync();
+        Task<int?> GetProgramSubjectIdAsync(int programId, int subjectId);
     }
 }
