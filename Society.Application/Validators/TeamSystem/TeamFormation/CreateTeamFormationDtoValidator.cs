@@ -12,9 +12,9 @@ namespace Society.Application.Validators.TeamSystem.TeamFormation
     {
         public CreateTeamFormationDtoValidator()
         {
-            RuleFor(x => x.Title)
+            RuleFor(x => x.TutorName)
                 .NotEmpty()
-                .WithMessage("Title is required.")
+                .WithMessage("TutorName is required.")
                 .MaximumLength(100);
 
             RuleFor(x => x.Description)

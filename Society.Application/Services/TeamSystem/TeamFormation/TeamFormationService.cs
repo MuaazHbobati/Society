@@ -39,8 +39,8 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             var formation = new Society.Domain.Entities.TeamFormation
             {
                 CreatorId = creatorId,
-                ProgramSubjectId = programSubjectId.Value,  
-                Title = dto.Title,
+                ProgramSubjectId = programSubjectId.Value,
+                TutorName = dto.TutorName,
                 Description = dto.Description,
                 ClassName = dto.ClassName,
                 MaxMembers = dto.MaxMembers,
@@ -65,7 +65,7 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             {
                 Id = f.Id,
                 CreatorId = f.CreatorId,
-                Title = f.Title,
+                TutorName = f.TutorName,
                 Description = f.Description,
                 ClassName = f.ClassName,
                 ProgramName = f.ProgramSubject.Program.Name,
@@ -92,7 +92,7 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             return new TeamFormationDetailsDto
             {
                 Id = formation.Id,
-                Title = formation.Title,
+                TutorName = formation.TutorName,
                 Description = formation.Description,
                 ClassName = formation.ClassName,
                 ProgramName = formation.ProgramSubject.Program.Name,
