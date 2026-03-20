@@ -10,7 +10,7 @@ namespace Society.Infrastructure.Configurations
         {
             builder.HasKey(tf => tf.Id);
 
-            builder.Property(tf => tf.Title)
+            builder.Property(tf => tf.TutorName)
                    .IsRequired()
                    .HasMaxLength(200);
 
