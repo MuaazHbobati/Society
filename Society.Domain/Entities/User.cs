@@ -26,7 +26,7 @@ namespace Society.Domain.Entities
         public bool IsActive { get; set; } = true;
         public DateTime LastLoginAt { get; set; }
         public UserProfile? Profile { get; set; }
-
+        public int ProgramId { get; set; }
         public ICollection<TeamMember> TeamMemberships { get; set; }
         public ICollection<TeamFormation> CreatedTeamFormations { get; set; }
 
