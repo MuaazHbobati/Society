@@ -3,9 +3,9 @@ import "./TeamFormationCard.css";
 
 const TeamFormationCard = ({ formation }) => {
   const {
-    title,
+    tutorName,
     description,
-    className, // ✅ أضف هذا
+    className,
     programName,
     subjectName,
     maxMembers,
@@ -21,8 +21,8 @@ const TeamFormationCard = ({ formation }) => {
 
   return (
     <div className="formation-card">
-      <div className="card-header">
-        <h4 className="card-title">{title}</h4>
+      <div className="card-header">        
+        <h4 className="card-title">{tutorName}</h4>
         <span className={`status-badge ${statusClass}`}>
           {statusText}
         </span>
@@ -31,9 +31,7 @@ const TeamFormationCard = ({ formation }) => {
       <span className="detail-label">الوصف:</span>
       <p className="card-description">{description}</p>
 
-      {/* ✅ إضافة حقل الصف */}
-      <div className="card-details">
-
+      <div className="card-details">      
         <div className="detail-item">
           <span className="detail-label">الصف:</span>
           <span className="detail-value">{className}</span>
@@ -48,7 +46,6 @@ const TeamFormationCard = ({ formation }) => {
           <span className="detail-label">المادة:</span>
           <span className="detail-value">{subjectName}</span>
         </div>
-
       </div>
 
       <div className="members-section">

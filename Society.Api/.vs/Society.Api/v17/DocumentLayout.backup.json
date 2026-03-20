@@ -3,29 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\services\\teamsystem\\teamformation\\teamformationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F648F69D-F1E9-4244-BF25-879F98D498CB}|..\\Society.Infrastructure\\Society.Infrastructure.csproj|c:\\users\\mstfy\\desktop\\society\\society.infrastructure\\repositories\\teamsystem\\teamformationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\interfaces\\repositories\\teamsystem\\iteamformationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|c:\\users\\mstfy\\desktop\\society\\society.api\\controllers\\teamformationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|solutionrelative:controllers\\teamformationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|c:\\users\\mstfy\\desktop\\society\\society.api\\controllers\\programcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|solutionrelative:controllers\\programcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|c:\\users\\mstfy\\desktop\\society\\society.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|c:\\users\\mstfy\\desktop\\society\\society.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,7 +13,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,90 +21,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ITeamFormationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Interfaces\\Repositories\\TeamSystem\\ITeamFormationRepository.cs",
-              "RelativeDocumentMoniker": "..\\Society.Application\\Interfaces\\Repositories\\TeamSystem\\ITeamFormationRepository.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Interfaces\\Repositories\\TeamSystem\\ITeamFormationRepository.cs",
-              "RelativeToolTip": "..\\Society.Application\\Interfaces\\Repositories\\TeamSystem\\ITeamFormationRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T22:50:04.983Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProgramController .cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\ProgramController .cs",
-              "RelativeDocumentMoniker": "Controllers\\ProgramController .cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\ProgramController .cs",
-              "RelativeToolTip": "Controllers\\ProgramController .cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAADwvzAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T19:51:37.926Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T19:51:37.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TeamFormationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
-              "RelativeDocumentMoniker": "..\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
-              "RelativeToolTip": "..\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAAwDIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T16:46:48.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TeamFormationController.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\TeamFormationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TeamFormationController.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\TeamFormationController.cs",
-              "RelativeToolTip": "Controllers\\TeamFormationController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwCMAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T16:36:30.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAAAIMAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T01:32:06.25Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TeamFormationService.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Services\\TeamSystem\\TeamFormation\\TeamFormationService.cs",
-              "RelativeDocumentMoniker": "..\\Society.Application\\Services\\TeamSystem\\TeamFormation\\TeamFormationService.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Services\\TeamSystem\\TeamFormation\\TeamFormationService.cs",
-              "RelativeToolTip": "..\\Society.Application\\Services\\TeamSystem\\TeamFormation\\TeamFormationService.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFwAAAANAAAAAAAAAA==",
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "..\\Society.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "..\\Society.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T01:11:56.129Z",
+              "WhenOpened": "2026-03-20T02:18:11.858Z",
               "EditorCaption": ""
             }
           ]

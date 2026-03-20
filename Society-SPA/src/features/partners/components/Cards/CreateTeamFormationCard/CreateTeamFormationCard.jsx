@@ -1,29 +1,25 @@
 // features/partners/components/Cards/CreateTeamFormationCard/CreateTeamFormationCard.jsx
 import React, { useState, useEffect } from "react";
 import { createTeamFormation } from "../../../services/partnersService";
-import {
-  getAllPrograms,
-  getSubjectsByProgram,
-} from "../../../services/programService";
+import {getAllPrograms, getSubjectsByProgram,} from "../../../services/programService";
 import "./CreateTeamFormationCard.css";
 
 const CreateTeamFormationCard = ({ onFormationCreated }) => {
-  // State للقوائم المنسدلة
+   
   const [programs, setPrograms] = useState([]);
   const [subjects, setSubjects] = useState([]);
   const [loadingPrograms, setLoadingPrograms] = useState(false);
   const [loadingSubjects, setLoadingSubjects] = useState(false);
 
-  // State للحقول
-  const [title, setTitle] = useState("");
+  
+  const [tutorName, setTutorName] = useState("");
   const [description, setDescription] = useState("");
   const [className, setClassName] = useState("");
   const [programId, setProgramId] = useState("");
   const [subjectId, setSubjectId] = useState("");
   const [maxMembers, setMaxMembers] = useState(20);
 
-  // Flags للتحقق
-  const [titleTouched, setTitleTouched] = useState(false);
+  const [tutorNameTouched, setTutorNameTouched] = useState(false);
   const [descriptionTouched, setDescriptionTouched] = useState(false);
   const [classNameTouched, setClassNameTouched] = useState(false);
   const [programIdTouched, setProgramIdTouched] = useState(false);
@@ -33,12 +29,11 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState("");
 
-  // ✅ جلب البرامج عند تحميل المكون
+  
   useEffect(() => {
     fetchPrograms();
   }, []);
-
-  // ✅ جلب المواد عند تغيير البرنامج
+  
   useEffect(() => {
     if (programId) {
       fetchSubjectsByProgram(programId);
@@ -72,7 +67,7 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
     }
   };
 
-  const isTitleValid = title.trim().length >= 3;
+  const isTutorNameValid = tutorName.trim().length >= 3;
   const isDescriptionValid = description.trim().length >= 10;
   const isClassNameValid =
     className.trim().length >= 1 && className.trim().length <= 5;
@@ -81,7 +76,7 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
   const isMaxMembersValid = maxMembers >= 2 && maxMembers <= 20;
 
   const isFormValid =
-    isTitleValid &&
+    isTutorNameValid &&
     isDescriptionValid &&
     isClassNameValid &&
     isProgramIdValid &&
@@ -91,8 +86,7 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Mark all as touched
-    setTitleTouched(true);
+    setTutorNameTouched(true);
     setDescriptionTouched(true);
     setClassNameTouched(true);
     setProgramIdTouched(true);
@@ -105,7 +99,7 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
     setApiError("");
 
     const dataToSend = {
-      title,
+      tutorName,
       description,
       className,
       programId: Number(programId),
@@ -117,15 +111,14 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
       const newFormation = await createTeamFormation(dataToSend);
       onFormationCreated(newFormation);
 
-      // Reset form
-      setTitle("");
+      setTutorName("");
       setDescription("");
       setClassName("");
       setProgramId("");
       setSubjectId("");
       setMaxMembers(20);
 
-      setTitleTouched(false);
+      setTutorNameTouched(false);
       setDescriptionTouched(false);
       setClassNameTouched(false);
       setProgramIdTouched(false);
@@ -142,14 +135,14 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
   };
 
   const handleReset = () => {
-    setTitle("");
+    setTutorName("");
     setDescription("");
     setClassName("");
     setProgramId("");
     setSubjectId("");
     setMaxMembers(20);
 
-    setTitleTouched(false);
+    setTutorNameTouched(false);
     setDescriptionTouched(false);
     setClassNameTouched(false);
     setProgramIdTouched(false);
@@ -168,21 +161,20 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
 
         <form onSubmit={handleSubmit} noValidate>
           <div className="form-grid">
-            {/* العنوان والصف */}
             <div className="form-group form-col-half">
-              <label htmlFor="title">العنوان</label>
+              <label htmlFor="tutorName">اسم المدرس</label>
               <input
-                id="title"
+                id="tutorName"
                 type="text"
-                className={`form-input ${titleTouched && !isTitleValid ? "error" : ""}`}
-                placeholder="مثال: برمجة ويب 1"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                onBlur={() => setTitleTouched(true)}
+                className={`form-input ${tutorNameTouched && !isTutorNameValid ? "error" : ""}`}
+                placeholder="مثال: أ. محمد أحمد"
+                value={tutorName}
+                onChange={(e) => setTutorName(e.target.value)}
+                onBlur={() => setTutorNameTouched(true)}
               />
-              {titleTouched && !isTitleValid && (
+              {tutorNameTouched && !isTutorNameValid && (
                 <span className="form-error-text">
-                  العنوان مطلوب (3 أحرف على الأقل)
+                  اسم المدرس مطلوب (3 أحرف على الأقل)
                 </span>
               )}
             </div>
