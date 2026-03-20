@@ -10,7 +10,7 @@ namespace Society.Application.DTOs.TeamSystem.TeamFormation
     public class CreateTeamFormationDto
     {
         [Required]
-        public string Title { get; set; }
+        public string TutorName { get; set; }
 
         public string Description { get; set; }
 

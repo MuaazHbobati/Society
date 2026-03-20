@@ -11,7 +11,7 @@ namespace Society.Application.DTOs.TeamSystem.TeamFormation
     {
         public int Id { get; set; }
 
-        public string Title { get; set; }
+        public string TutorName { get; set; }
 
         public string Description { get; set; }
         public string ClassName { get; set; }
