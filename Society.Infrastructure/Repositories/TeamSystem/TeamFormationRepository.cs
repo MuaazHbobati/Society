@@ -22,10 +22,13 @@ namespace Society.Infrastructure.Repositories.TeamSystem
         {
              await _context.TeamFormations.AddAsync(formation);
         }
-
         public async Task<List<TeamFormation>> GetAllAsync()
         {
             return await _context.TeamFormations
+                .Include(tf => tf.Creator)
+                    .ThenInclude(u => u.Person)
+                .Include(tf => tf.Creator)
+                    .ThenInclude(u => u.Profile)
                 .Include(tf => tf.ProgramSubject)
                     .ThenInclude(ps => ps.Program)
                 .Include(tf => tf.ProgramSubject)
@@ -33,17 +36,19 @@ namespace Society.Infrastructure.Repositories.TeamSystem
                 .ToListAsync();
         }
 
-
         public async Task<TeamFormation> GetByIdAsync(int id)
         {
             return await _context.TeamFormations
+                .Include(tf => tf.Creator)
+                    .ThenInclude(u => u.Person)
+                .Include(tf => tf.Creator)
+                    .ThenInclude(u => u.Profile)
                 .Include(tf => tf.ProgramSubject)
                     .ThenInclude(ps => ps.Program)
                 .Include(tf => tf.ProgramSubject)
                     .ThenInclude(ps => ps.Subject)
                 .FirstOrDefaultAsync(tf => tf.Id == id);
         }
-
         public async Task SaveChangesAsync()
         {
             await _context.SaveChangesAsync();
