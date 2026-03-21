@@ -21,14 +21,16 @@ const TeamFormationCard = ({ formation }) => {
 
   return (
     <div className="formation-card">
-      <div className="card-header">        
-        <h4 className="card-title">{tutorName}</h4>
+      <div className="card-header">     
         <span className={`status-badge ${statusClass}`}>
           {statusText}
         </span>
+           
+        <h4 className="card-title">{subjectName }</h4>
+        
       </div>
       
-      <span className="detail-label">الوصف:</span>
+      <span className="detail-label">ملاحظات:</span>
       <p className="card-description">{description}</p>
 
       <div className="card-details">      
@@ -43,8 +45,13 @@ const TeamFormationCard = ({ formation }) => {
         </div>
 
         <div className="detail-item">
-          <span className="detail-label">المادة:</span>
-          <span className="detail-value">{subjectName}</span>
+          <span className="detail-label">الدكتور:</span>
+          <span className="detail-value">{tutorName}</span>
+        </div>
+
+         <div className="detail-item">
+          <span className="detail-label">الناشر:</span>
+          <span className="detail-value">غير معروف</span>
         </div>
       </div>
 

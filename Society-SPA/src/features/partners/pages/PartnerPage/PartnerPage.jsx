@@ -56,8 +56,6 @@ const PartnerPage = () => {
   return (
     <div className="partner-page">
     
-
-
       <div className="filters-section">
         <div className="filters-container">
           {/* شريط البحث */}

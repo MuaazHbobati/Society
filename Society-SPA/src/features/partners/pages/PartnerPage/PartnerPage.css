@@ -4,9 +4,7 @@
 .partner-page {
   width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
-  padding: 24px;
-  display: flex;
+   display: flex;
   flex-direction: column;
   gap: 24px;
   box-sizing: border-box; /* مهم جداً */
@@ -109,7 +107,7 @@
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
 }
 
-/* ===== شبكة البطاقات - الحل النهائي ===== */
+/* ===== شبكة البطاقات - تعديل لعرض بطاقتين ===== */
 .formations-section {
   width: 100%;
   overflow: hidden; /* لمنع خروج العناصر */
@@ -117,8 +115,8 @@
 
 .formations-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة ثابتة */
-  gap: 24px; /* المسافة بين البطاقات */
+  grid-template-columns: repeat(2, 1fr); /* عرض بطاقتين */
+  gap: 24px;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -128,7 +126,7 @@
 /* ديسكتوب متوسط */
 @media (max-width: 1200px) {
   .formations-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
 }
@@ -136,7 +134,7 @@
 /* تابلت */
 @media (max-width: 992px) {
   .formations-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr; /* بطاقة واحدة */
     gap: 20px;
   }
 }
@@ -144,7 +142,7 @@
 /* موبايل */
 @media (max-width: 768px) {
   .formations-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* بطاقة واحدة */
     gap: 16px;
   }
   

@@ -12,7 +12,7 @@
 .home-page {
   background-color: var(--background2);
   min-height: 100vh;
-  padding-top:  20px;
+  padding-top:  0px;
   padding-bottom: 40px;
 }
 
@@ -43,7 +43,7 @@
 /* العمود الرئيسي للمحتوى */
 .home-page__content {
   background-color: transparent;
-  padding: 24px;
+  padding: 14px;
   min-height: 300vh;
 }
 
@@ -74,10 +74,11 @@
   .home-page__sidebar {
     position: static; /* إلغاء التثبيت */
     margin-bottom: 16px;
+    margin-top: 10px;
   }
 
   .home-page__content {
-    padding: 20px;
+    padding: 0px;
   }
 }
 
