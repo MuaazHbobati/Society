@@ -56,9 +56,13 @@ const PartnerPage = () => {
   return (
     <div className="partner-page">
     
+    <div className="create-section">
+        <CreateTeamFormationCard onFormationCreated={handleFormationCreated} />
+      </div>
+      
       <div className="filters-section">
         <div className="filters-container">
-          {/* شريط البحث */}
+        
           <div className="search-wrapper">
             <input
               type="text"
@@ -69,7 +73,6 @@ const PartnerPage = () => {
             />
           </div>
 
-          {/* أزرار التصفية */}
           <div className="filter-buttons">
             <button
               className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
@@ -102,11 +105,8 @@ const PartnerPage = () => {
         </div>
       </div>
         
-      <div className="create-section">
-        <CreateTeamFormationCard onFormationCreated={handleFormationCreated} />
-      </div>
+      
 
-      {/* 3. البطاقات - في الأسفل */}
       <div className="formations-section">
         {loading && (
           <div className="loading-state">

@@ -1,7 +1,6 @@
 /* src/shared/styles/forms.css */
 
 .form-container {
-  
   margin: 0 auto;
   padding: 24px 22px;
   background: var(--card-bg);
@@ -71,6 +70,7 @@
   transition: all 0.2s ease;
   box-sizing: border-box;
   line-height: 1.4;
+  resize: none;
 }
 
 .form-input:focus {

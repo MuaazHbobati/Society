@@ -1,6 +1,6 @@
 /* features/partners/components/Cards/TeamFormationCard/TeamFormationCard.css */
-/* features/partners/components/Cards/TeamFormationCard/TeamFormationCard.css */
 
+/* ===== البطاقة الأساسية ===== */
 .formation-card {
   background-color: var(--card-bg, #ffffff);
   border-radius: 16px;
@@ -10,63 +10,102 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  height: 100%; /* مهم جداً */
-  width: 100%; /* مهم جداً */
-  box-sizing: border-box; /* مهم جداً */
-  position: relative;
-  overflow: hidden;
+  gap: 12px;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .formation-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-blue, 0px 4px 20px rgba(37, 99, 235, 0.25));
-  border-color: var(--primary-light, #60a5fa);
+  box-shadow: var(--shadow-md, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
 }
 
-/* باقي التنسيقات كما هي */
-.formation-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-blue), var(--primary-light));
-  opacity: 0;
-  transition: opacity 0.3s ease;
+/* ===== قسم الناشر (الصورة + الاسم) ===== */
+.creator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gray-light, #e2e8f0);
+  margin-bottom: 8px;
 }
 
-
-.formation-card:hover::before {
-  opacity: 1;
+.creator-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-blue, #2563eb);
+  background-color: var(--off-white, #f8fafc);
+  flex-shrink: 0;
 }
 
-/* رأس البطاقة */
+.creator-photo-placeholder {
+  color: var(--primary-blue, #2563eb);
+  background-color: var(--off-white, #f8fafc);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.creator-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.creator-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black, #0f172a);
+  margin-top: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.creator-username {
+  font-size: 0.75rem;
+  color: var(--gray-medium, #94a3b8);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ===== رأس البطاقة (الحالة + المادة) ===== */
 .card-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.card-title {
+.card-header .card-title {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--black, #0f172a);
-  line-height: 1.4;
- }
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-blue, #2563eb);
+  line-height: 1.3;
+  word-break: break-word;
+}
+.card-value{
+    display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
-/* شارة الحالة */
+/* ===== شارة الحالة ===== */
 .status-badge {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
-  margin-bottom: 5px;
+  padding: 4px 12px;
   border-radius: 30px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   white-space: nowrap;
   background-color: var(--off-white, #f8fafc);
@@ -91,85 +130,88 @@
   border-color: rgba(148, 163, 184, 0.2);
 }
 
-.status-icon {
-  font-size: 1rem;
-}
-
-/* الوصف */
+/* ===== الوصف ===== */
 .card-description {
   margin: 0;
   color: var(--gray-dark, #334155);
-  font-size: 0.9rem;
-  line-height: 1.6;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  min-height: 4.8em;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  word-break: break-word;
+  flex: 1;
 }
 
-/* تفاصيل البطاقة */
+/* ===== تفاصيل البطاقة ===== */
 .card-details {
+  background-color: var(--off-white, #f8fafc);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 4px 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 12px 0 8px;
-  border-top: 1px solid var(--gray-light, #e2e8f0);
-  border-bottom: 1px solid var(--gray-light, #e2e8f0);
-  background-color: var(--off-white, #f8fafc);
-  margin: 0 -4px;
-  padding-left: 12px;
-  padding-right: 12px;
-  border-radius: 8px;
+  gap: 8px;
 }
 
 .detail-item {
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.detail-icon {
+  color: var(--gray-medium, #94a3b8);
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .detail-label {
   color: var(--gray-medium, #94a3b8);
   font-weight: 500;
+  min-width: 55px;
 }
 
 .detail-value {
   color: var(--black, #0f172a);
-  font-weight: 600;
-  font-size: 0.85rem;
-  margin-right: 10px;
+  font-weight: 500;
+  word-break: break-word;
+  flex: 1;
+
 }
 
-/* قسم الأعضاء */
+
+
+/* ===== قسم الأعضاء ===== */
 .members-section {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 4px 0;
+  gap: 8px;
 }
 
 .members-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .members-count {
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--black, #0f172a);
 }
 
 .members-count .current {
   color: var(--primary-blue, #2563eb);
   font-size: 1.2rem;
-  margin-left: 2px;
+  font-weight: 700;
 }
 
 .members-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   color: var(--gray-medium, #94a3b8);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 500;
   background-color: var(--off-white, #f8fafc);
   padding: 4px 12px;
@@ -183,13 +225,12 @@
   background-color: var(--gray-light, #e2e8f0);
   border-radius: 10px;
   overflow: hidden;
-  margin: 4px 0;
 }
 
 .progress-fill {
   height: 100%;
   border-radius: 10px;
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.3s ease;
 }
 
 .progress-fill.open {
@@ -202,4 +243,48 @@
 
 .progress-fill.closed {
   background: linear-gradient(90deg, var(--gray-medium, #94a3b8), #cbd5e1);
+}
+
+/* ===== تحسينات الاستجابة ===== */
+@media (max-width: 768px) {
+  .formation-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .formation-card {
+    padding: 16px;
+  }
+
+  .creator-photo,
+  .creator-photo-placeholder {
+    width: 40px;
+    height: 40px;
+  }
+
+  .creator-name {
+    font-size: 0.9rem;
+  }
+
+  .card-header .card-title {
+    font-size: 1rem;
+  }
+
+  .detail-item {
+    font-size: 0.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .detail-label {
+    min-width: auto;
+  }
+
+  .members-count .current {
+    font-size: 1rem;
+  }
+
+
 }

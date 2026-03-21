@@ -1,6 +1,4 @@
- 
 
-/* متغيرات خاصة بالتخطيط (يمكن نقلها لملف منفصل إذا أردت) */
 :root {
   --sidebar-width: 280px;
   --content-gap: 24px;
@@ -8,7 +6,6 @@
   --border-radius: 16px;
 }
 
-/* الصفحة الرئيسية */
 .home-page {
   background-color: var(--background2);
   min-height: 100vh;
@@ -16,7 +13,6 @@
   padding-bottom: 40px;
 }
 
-/* الحاوية التي تحد من العرض وتطبق الـ grid */
 .home-page__container {
   max-width: 1200px;
   margin: 0 auto;
@@ -33,23 +29,18 @@
   font-size: 30px;
 }
 
-/* العمود الجانبي (ثابت عند التمرير) */
 .home-page__sidebar {
   position: sticky;
   top: calc(var(--header-height) + 20px);
   align-self: start;
 }
 
-/* العمود الرئيسي للمحتوى */
 .home-page__content {
   background-color: transparent;
   padding: 14px;
-  min-height: 300vh;
+  min-height: 100vh;
 }
 
-/* === تحسينات Responsive === */
-
-/* شاشات كبيرة (992px - 1200px) */
 @media (max-width: 1200px) {
   .home-page__container {
     max-width: 1000px;
@@ -63,7 +54,6 @@
   }
 }
 
-/* شاشات تابلت (حتى 768px) - يبقى عمودين مع sticky */
 @media (max-width: 768px) {
   .home-page__container {
     grid-template-columns: 1fr;
@@ -72,7 +62,7 @@
   }
 
   .home-page__sidebar {
-    position: static; /* إلغاء التثبيت */
+    position: static;
     margin-bottom: 16px;
     margin-top: 10px;
   }
@@ -82,7 +72,6 @@
   }
 }
 
-/* شاشات موبايل صغيرة (حتى 480px) */
 @media (max-width: 480px) {
   .home-page__container {
     padding: 0 12px;
@@ -92,8 +81,6 @@
     padding: 0;
   }
 }
-
-/* === حالات التحميل والخطأ === */
 
 .home-page__loading,
 .home-page__error {
@@ -106,7 +93,6 @@
   text-align: center;
 }
 
-/* دائرة التحميل */
 .spinner {
   width: 50px;
   height: 50px;
@@ -122,7 +108,6 @@
   }
 }
 
-/* رسالة الخطأ */
 .home-page__error p {
   color: var(--error);
   font-weight: 500;
