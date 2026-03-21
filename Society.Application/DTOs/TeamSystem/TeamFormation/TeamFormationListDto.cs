@@ -10,22 +10,16 @@ namespace Society.Application.DTOs.TeamSystem.TeamFormation
     public class TeamFormationListDto
     {
         public int Id { get; set; }
-
-        public int CreatorId { get; set; }
         public string TutorName { get; set; }
-
         public string ClassName { get; set; }
-
         public string Description { get; set; }
-
         public string ProgramName { get; set; }
-
         public string SubjectName { get; set; }
-
         public int MaxMembers { get; set; }
-
         public int CurrentMembersCount { get; set; }
-
+        public string CreatorName { get; set; }
+        public string CreatorUsername { get; set; }
+        public string CreatorPhoto { get; set; }
         public TeamFormationStatus Status { get; set; }
     }
 }

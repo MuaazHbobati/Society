@@ -64,7 +64,9 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             return formations.Select(f => new TeamFormationListDto
             {
                 Id = f.Id,
-                CreatorId = f.CreatorId,
+                CreatorName = f.Creator.Person.FirstName + " " + f.Creator.Person.LastName,
+                CreatorUsername = f.Creator.Username,
+                CreatorPhoto = f.Creator.Profile.ProfilePictureUrl,
                 TutorName = f.TutorName,
                 Description = f.Description,
                 ClassName = f.ClassName,
@@ -92,6 +94,9 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             return new TeamFormationDetailsDto
             {
                 Id = formation.Id,
+                CreatorName = formation.Creator.Person.FirstName + " " + formation.Creator.Person.LastName,
+                CreatorUsername = formation.Creator.Username,
+                CreatorPhoto = formation.Creator.Profile.ProfilePictureUrl,
                 TutorName = formation.TutorName,
                 Description = formation.Description,
                 ClassName = formation.ClassName,
