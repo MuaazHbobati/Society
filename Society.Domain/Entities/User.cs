@@ -20,6 +20,7 @@ namespace Society.Domain.Entities
 
         [Required]
         public string Email { get; set; } = null!;
+        public string SVUMail { get; set; } = null!;
         public string Username { get; set; } = null;
         public string PasswordHash { get; set; } = null;
         public bool IsEmailConfirmed { get; set; } = false;
@@ -29,6 +30,6 @@ namespace Society.Domain.Entities
         public int ProgramId { get; set; }
         public ICollection<TeamMember> TeamMemberships { get; set; }
         public ICollection<TeamFormation> CreatedTeamFormations { get; set; }
-
+        public Program Program { get; set; } = null!;
     }
 }

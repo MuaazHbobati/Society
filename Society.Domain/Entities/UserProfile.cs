@@ -14,8 +14,7 @@ namespace Society.Domain.Entities
         public int UserId { get; set; }
         public User User { get; set; } = null!;
         public string? Bio {  get; set; }
-        public string? University { get; set; }
-        public string? Faculty { get; set; }
+        public string? University { get; set; } = "Syrian Virtual University (SVU)";
         public string? Major { get; set; }
         public string? City { get; set; }
         public string? Country { get; set; }
