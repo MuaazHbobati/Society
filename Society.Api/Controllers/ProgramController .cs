@@ -5,6 +5,7 @@ using Society.Application.Interfaces.Services;
 using Society.Application.DTOs;
 using Society.Application.DTOs.Program;
 using Society.Application.DTOs.Subject;
+using System.Security.Claims;
 namespace Society.Api.Controllers
 {
     [ApiController]
@@ -20,6 +21,7 @@ namespace Society.Api.Controllers
         }
 
         [HttpGet("programs")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<ProgramDto>>> GetAllPrograms()
         {
             try 
@@ -38,6 +40,26 @@ namespace Society.Api.Controllers
             try
             {
                 return Ok(await _programService.GetSubjectsByProgramIdAsync(programId));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "خطأ في جلب المواد", error = ex.Message });
+            }
+        }
+
+        [HttpGet("my-subjects")]
+        public async Task<ActionResult<List<SubjectDto>>> GetMySubjects()
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userIdClaim) || !int.TryParse(userIdClaim, out int userId))
+                {
+                    return Unauthorized(new { message = "المستخدم غير مصرح له" });
+                }
+
+                var subjects = await _programService.GetMySubjectsAsync(userId);
+                return Ok(subjects);
             }
             catch (Exception ex)
             {

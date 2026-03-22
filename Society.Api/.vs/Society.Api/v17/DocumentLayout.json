@@ -3,10 +3,29 @@
   "WorkspaceRootPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F648F69D-F1E9-4244-BF25-879F98D498CB}|..\\Society.Infrastructure\\Society.Infrastructure.csproj|c:\\users\\mstfy\\desktop\\society\\society.infrastructure\\migrations\\20260320024005_addprogramidtousertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\validators\\teamsystem\\teamformation\\createteamformationdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BD4ADB79-F93E-4D28-A349-EFC679489402}|..\\Society.Domain\\Society.Domain.csproj|c:\\users\\mstfy\\desktop\\society\\society.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|c:\\users\\mstfy\\desktop\\society\\society.api\\controllers\\programcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57D5F593-487B-4CB1-9998-EE24C67A887E}|Society.Api.csproj|solutionrelative:controllers\\programcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\interfaces\\services\\iprogramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\services\\programservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\services\\teamsystem\\teamformation\\teamformationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\dtos\\userprofile\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F648F69D-F1E9-4244-BF25-879F98D498CB}|..\\Society.Infrastructure\\Society.Infrastructure.csproj|c:\\users\\mstfy\\desktop\\society\\society.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FD8DE64-7312-4AB4-9576-5175B8505D2C}|..\\Society.Application\\Society.Application.csproj|c:\\users\\mstfy\\desktop\\society\\society.application\\dtos\\teamsystem\\teamformation\\createteamformationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,27 +44,105 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20260320024005_AddProgramIdToUserTable.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Migrations\\20260320024005_AddProgramIdToUserTable.cs",
-              "RelativeDocumentMoniker": "..\\Society.Infrastructure\\Migrations\\20260320024005_AddProgramIdToUserTable.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Migrations\\20260320024005_AddProgramIdToUserTable.cs",
-              "RelativeToolTip": "..\\Society.Infrastructure\\Migrations\\20260320024005_AddProgramIdToUserTable.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "CreateTeamFormationDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Validators\\TeamSystem\\TeamFormation\\CreateTeamFormationDtoValidator.cs",
+              "RelativeDocumentMoniker": "..\\Society.Application\\Validators\\TeamSystem\\TeamFormation\\CreateTeamFormationDtoValidator.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Validators\\TeamSystem\\TeamFormation\\CreateTeamFormationDtoValidator.cs",
+              "RelativeToolTip": "..\\Society.Application\\Validators\\TeamSystem\\TeamFormation\\CreateTeamFormationDtoValidator.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAjwBQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T02:40:13.614Z",
+              "WhenOpened": "2026-03-22T05:32:56.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProgramService.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Services\\ProgramService.cs",
+              "RelativeDocumentMoniker": "..\\Society.Application\\Services\\ProgramService.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Services\\ProgramService.cs",
+              "RelativeToolTip": "..\\Society.Application\\Services\\ProgramService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T05:25:33.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IProgramService.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Interfaces\\Services\\IProgramService.cs",
+              "RelativeDocumentMoniker": "..\\Society.Application\\Interfaces\\Services\\IProgramService.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Interfaces\\Services\\IProgramService.cs",
+              "RelativeToolTip": "..\\Society.Application\\Interfaces\\Services\\IProgramService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T05:25:08.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "..\\Society.Domain\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Entities\\User.cs",
-              "RelativeToolTip": "..\\Society.Domain\\Entities\\User.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAwwCEAAAABAAAAAAAAAA==",
+              "Title": "ProgramController .cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\ProgramController .cs",
+              "RelativeDocumentMoniker": "Controllers\\ProgramController .cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Controllers\\ProgramController .cs",
+              "RelativeToolTip": "Controllers\\ProgramController .cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-20T02:18:11.858Z",
+              "WhenOpened": "2026-03-22T05:21:41.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserProfileDto.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\DTOs\\UserProfile\\UserProfileDto.cs",
+              "RelativeDocumentMoniker": "..\\Society.Application\\DTOs\\UserProfile\\UserProfileDto.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\DTOs\\UserProfile\\UserProfileDto.cs",
+              "RelativeToolTip": "..\\Society.Application\\DTOs\\UserProfile\\UserProfileDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T05:18:08.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\Society.Infrastructure\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "..\\Society.Infrastructure\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T05:10:08.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TeamFormationService.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Services\\TeamSystem\\TeamFormation\\TeamFormationService.cs",
+              "RelativeDocumentMoniker": "..\\Society.Application\\Services\\TeamSystem\\TeamFormation\\TeamFormationService.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Services\\TeamSystem\\TeamFormation\\TeamFormationService.cs",
+              "RelativeToolTip": "..\\Society.Application\\Services\\TeamSystem\\TeamFormation\\TeamFormationService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T05:08:46.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateTeamFormationDto.cs",
+              "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\DTOs\\TeamSystem\\TeamFormation\\CreateTeamFormationDto.cs",
+              "RelativeDocumentMoniker": "..\\Society.Application\\DTOs\\TeamSystem\\TeamFormation\\CreateTeamFormationDto.cs",
+              "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\DTOs\\TeamSystem\\TeamFormation\\CreateTeamFormationDto.cs",
+              "RelativeToolTip": "..\\Society.Application\\DTOs\\TeamSystem\\TeamFormation\\CreateTeamFormationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T05:07:41.446Z",
               "EditorCaption": ""
             }
           ]
