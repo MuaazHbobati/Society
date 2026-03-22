@@ -9,10 +9,8 @@ namespace Society.Application.Interfaces.Repositories
 {
     public interface IProgramRepository
     {
-        // جلب كل البرامج
         Task<IEnumerable<Program>> GetAllProgramsAsync();
-
-        // جلب المواد حسب معرف البرنامج
+        Task<Program?> GetProgramByIdAsync(int programId);
         Task<IEnumerable<Subject>> GetSubjectsByProgramIdAsync(int programId);
     }
 }

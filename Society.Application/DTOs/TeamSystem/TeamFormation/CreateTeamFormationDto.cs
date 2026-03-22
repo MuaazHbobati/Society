@@ -11,14 +11,10 @@ namespace Society.Application.DTOs.TeamSystem.TeamFormation
     {
         [Required]
         public string TutorName { get; set; }
-
         public string Description { get; set; }
 
         [Required]
         public string ClassName { get; set; }
-
-        [Required]
-        public int ProgramId { get; set; }
 
         [Required]
         public int SubjectId { get; set; }

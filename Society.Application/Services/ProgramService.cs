@@ -14,10 +14,12 @@ namespace Society.Application.Services
     public class ProgramService : IProgramService
     {
         private readonly IProgramRepository _programRepository;
+        private readonly IUserRepository _userRepository;
 
-        public ProgramService(IProgramRepository programRepository)
+        public ProgramService(IProgramRepository programRepository, IUserRepository userRepository)
         {
             _programRepository = programRepository;
+            _userRepository = userRepository;
         }
         public async Task<List<ProgramDto>> GetAllProgramsAsync()
         {
@@ -30,6 +32,33 @@ namespace Society.Application.Services
 
         }
 
+        public async Task<List<SubjectDto>> GetMySubjectsAsync(int userId)
+        {
+            var user = await _userRepository.GetUserWithProfileAsync(userId);
+            if (user == null)
+            {
+                throw new Exception("المستخدم غير موجود");
+            }
+
+            var subjects = await _programRepository.GetSubjectsByProgramIdAsync(user.ProgramId);
+            return subjects.Select(s => new SubjectDto
+            {
+                Id = s.Id,
+                Name = s.Name
+            }).ToList();
+        }
+
+        public async Task<ProgramDto?> GetProgramByIdAsync(int programId)
+        {
+            var program = await _programRepository.GetProgramByIdAsync(programId);
+            if (program == null) return null;
+
+            return new ProgramDto
+            {
+                Id = program.Id,
+                Name = program.Name
+            };
+        }
         public async Task<List<SubjectDto>> GetSubjectsByProgramIdAsync(int programId)
         {
             var subjects = await _programRepository.GetSubjectsByProgramIdAsync(programId);

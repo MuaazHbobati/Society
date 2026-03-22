@@ -31,11 +31,8 @@ namespace Society.Application.Services
                 throw new Exception("Profile not found");
             }
 
-            // ✅ تحدث فقط إذا القيمة مش null (حماية البيانات)
             if (dto.Bio != null) profile.Bio = dto.Bio;
             if (dto.City != null) profile.City = dto.City;
-            if (dto.University != null) profile.University = dto.University;
-            if (dto.Faculty != null) profile.Faculty = dto.Faculty;
             if (dto.Major != null) profile.Major = dto.Major;
             if (dto.Country != null) profile.Country = dto.Country;
             if (dto.ProfilePictureUrl != null) profile.ProfilePictureUrl = dto.ProfilePictureUrl;
@@ -54,22 +51,18 @@ namespace Society.Application.Services
 
             return new UserProfileDto
             {
-                // من UserProfile
                 Bio = profile.Bio,
                 City = profile.City,
                 University = profile.University,
-                Faculty = profile.Faculty,
                 Major = profile.Major,
                 ProfilePictureUrl = profile.ProfilePictureUrl,
                 Country = profile.Country,
                 UpdatedAt = profile.UpdatedAt,
-                UserId = user.Id,
-
-                // ✅ من User (البيانات الأساسية)
                 FirstName = user.Person.FirstName,
                 LastName = user.Person.LastName,
                 UserName = user.Username,
-                Email = user.Email
+                SVUMail = user.SVUMail,
+                ProgramName = user.Program.Name
             };
         }
     }

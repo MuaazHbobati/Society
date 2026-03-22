@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
+using Society.Application.Interfaces.Repositories;
 
 
 namespace Society.Application.Services.TeamSystem.TeamFormation
@@ -19,22 +20,28 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
     public class TeamFormationService : ITeamFormationService
     {
         private readonly ITeamFormationRepository _repository;
+        private readonly IUserRepository _userRepository;
 
-        public TeamFormationService(ITeamFormationRepository repository)
+        public TeamFormationService(ITeamFormationRepository repository,IUserRepository userRepository)
         {
             _repository = repository;
+            _userRepository = userRepository;
         }
 
         public async Task<TeamFormationDetailsDto> CreateAsync(CreateTeamFormationDto dto, int creatorId)
         {
+            var user = await _userRepository.GetUserWithProfileAsync(creatorId);
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
 
-            var programSubjectId = await _repository.GetProgramSubjectIdAsync(dto.ProgramId, dto.SubjectId);
+            var programSubjectId = await _repository.GetProgramSubjectIdAsync(user.ProgramId, dto.SubjectId);
 
             if (programSubjectId == null)
             {
-                throw new Exception("البرنامج والمادة غير متوافقين");
+                throw new Exception("المادة غير متوافقة مع برنامجك");
             }
-
 
             var formation = new Society.Domain.Entities.TeamFormation
             {
@@ -56,7 +63,6 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
 
             return MapToDetailsDto(createdFormation);
         }
-
         public async Task<List<TeamFormationListDto>> GetAllAsync()
         {
             var formations = await _repository.GetAllAsync();

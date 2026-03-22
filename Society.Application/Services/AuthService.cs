@@ -18,11 +18,13 @@ namespace Society.Application.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IJwtProvider _jwtProvider;
+        private readonly IProgramService _programService;
 
-        public AuthService(IUserRepository userRepository, IJwtProvider jwtProvider)
+        public AuthService(IUserRepository userRepository, IJwtProvider jwtProvider, IProgramService programService)
         {
             _userRepository = userRepository;
             _jwtProvider = jwtProvider;
+            _programService = programService;
         }
 
         public async Task<LoginResponseDto> LoginAsync(LoginRequestDto dto)
@@ -54,16 +56,19 @@ namespace Society.Application.Services
             {
                 throw new ArgumentException("Username alredy exist");
             }
-
-            if(!Enum.TryParse<Gender>(dto.Gender,true,out var gender))
+            var program = await _programService.GetProgramByIdAsync(dto.ProgramId);
+            if (program == null)
+            {
+                throw new ArgumentException("Invalid program selected");
+            }
+            if (!Enum.TryParse<Gender>(dto.Gender,true,out var gender))
             {
                 throw new Exception("Invalid gender value");
             }
 
             var person = new Person()
             {
-                FirstName = dto.FirstName,
-                FatherName = dto.FatherName,
+                FirstName = dto.FirstName,               
                 LastName = dto.LastName,
                 BirthDate = dto.BirthDate,
                 Gender = gender
@@ -75,7 +80,9 @@ namespace Society.Application.Services
                 PersonId = person.Id,
                 Username = dto.Username,
                 PasswordHash = HashPassword(dto.Password),
-                Email = dto.Email
+                Email = dto.Email,
+                SVUMail = dto.SVUMail,
+                ProgramId = dto.ProgramId
             };
             await _userRepository.AddAsync(user);
 

@@ -20,10 +20,6 @@ namespace Society.Application.Validators.TeamSystem.TeamFormation
             RuleFor(x => x.Description)
                 .MaximumLength(500);
 
-            RuleFor(x => x.ProgramId)
-                .NotEmpty()
-                .WithMessage("Program must be selected.");
-
             RuleFor(x => x.SubjectId)
                 .NotEmpty()
                 .WithMessage("Subject must be selected.");

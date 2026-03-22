@@ -18,12 +18,6 @@ namespace Society.Application.Validators.UserProfile
             //Major
             RuleFor(x => x.Major).NotEmpty().WithMessage("Major is requierd");
 
-            //Faculty
-            RuleFor(x => x.Faculty).NotEmpty().WithMessage("Faculty is requierd");
-
-            //University
-            RuleFor(x => x.University).NotEmpty().WithMessage("University is requierd");
-
             //City
             RuleFor(x => x.City).NotEmpty().WithMessage("City is requierd");
         }

@@ -10,9 +10,9 @@ namespace Society.Application.Interfaces.Services
 {    
     public interface IProgramService
     {
-        Task<List<ProgramDto>> GetAllProgramsAsync();
-
-        // جلب المواد حسب معرف البرنامج
+        Task<List<ProgramDto>> GetAllProgramsAsync();            
         Task<List<SubjectDto>> GetSubjectsByProgramIdAsync(int programId);
+        Task<ProgramDto?> GetProgramByIdAsync(int programId);
+        Task<List<SubjectDto>> GetMySubjectsAsync(int userId);
     }
 }
