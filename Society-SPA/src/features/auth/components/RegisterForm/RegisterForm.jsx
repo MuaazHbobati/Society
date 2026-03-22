@@ -1,29 +1,36 @@
 import "./RegisterForm.css";
 import "../../../../shared/styles/forms.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authService } from "../../services/authService";
+import { getAllPrograms } from  "../../../partners/services/programService.js";
 
 export default function RegisterForm() {
   const navigate = useNavigate();
-  
-  // ✅ 1. State لكل حقل على حدة
+
+  // ===== State لكل حقل =====
   const [firstName, setFirstName] = useState("");
-  const [fatherName, setFatherName] = useState("");
   const [lastName, setLastName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [svuMail, setSvuMail] = useState("");
+  const [programId, setProgramId] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [gender, setGender] = useState("");
 
-  // ✅ 2. Flags للتحقق
+  // ===== State للبرامج =====
+  const [programs, setPrograms] = useState([]);
+  const [loadingPrograms, setLoadingPrograms] = useState(false);
+
+  // ===== Flags للتحقق =====
   const [firstNameTouched, setFirstNameTouched] = useState(false);
-  const [fatherNameTouched, setFatherNameTouched] = useState(false);
   const [lastNameTouched, setLastNameTouched] = useState(false);
   const [usernameTouched, setUsernameTouched] = useState(false);
   const [emailTouched, setEmailTouched] = useState(false);
+  const [svuMailTouched, setSvuMailTouched] = useState(false);
+  const [programIdTouched, setProgramIdTouched] = useState(false);
   const [passwordTouched, setPasswordTouched] = useState(false);
   const [confirmPasswordTouched, setConfirmPasswordTouched] = useState(false);
   const [birthDateTouched, setBirthDateTouched] = useState(false);
@@ -32,26 +39,43 @@ export default function RegisterForm() {
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState("");
 
-  // ✅ 3. دوال التحقق لكل حقل
+  // ===== جلب البرامج عند تحميل الصفحة =====
+  useEffect(() => {
+    const fetchPrograms = async () => {
+      setLoadingPrograms(true);
+      try {
+        const data = await getAllPrograms();
+        setPrograms(Array.isArray(data) ? data : []);
+      } catch (error) {
+        console.error("Error fetching programs:", error);
+        setPrograms([]);
+      } finally {
+        setLoadingPrograms(false);
+      }
+    };
+    fetchPrograms();
+  }, []);
+
+  // ===== دوال التحقق لكل حقل =====
   const isFirstNameValid = firstName.trim() !== "" && firstName.length >= 2;
-  const isFatherNameValid = fatherName.trim() !== "" && fatherName.length >= 2;
   const isLastNameValid = lastName.trim() !== "" && lastName.length >= 2;
-  const isUsernameValid = username.trim() !== "" && username.length >= 3;
-const isEmailValid = (email) => {
-  const lowerEmail = email.toLowerCase();
-  return lowerEmail.endsWith('@gmail.com') || lowerEmail.endsWith('@yahoo.com');
-};  const isPasswordValid = password.length >= 8 && /[A-Z]/.test(password) && /[0-9]/.test(password);
+  const isUsernameValid = username.trim() !== "" && username.length >= 3 && /^[a-zA-Z0-9_]+$/.test(username);
+  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const isSvuMailValid = svuMail.toLowerCase().endsWith("@svuonline.org") && /^[a-z0-9_]+@svuonline\.org$/.test(svuMail.toLowerCase());
+  const isProgramIdValid = programId !== "" && programId !== null;
+  const isPasswordValid = password.length >= 8 && /[A-Z]/.test(password) && /[0-9]/.test(password);
   const isConfirmPasswordValid = confirmPassword === password;
   const isBirthDateValid = birthDate !== "" && new Date(birthDate) < new Date();
   const isGenderValid = gender === "Male" || gender === "Female";
 
-  // ✅ 4. التحقق الكلي للفورم
-  const isFormValid = 
+  // ===== التحقق الكلي للفورم =====
+  const isFormValid =
     isFirstNameValid &&
-    isFatherNameValid &&
     isLastNameValid &&
     isUsernameValid &&
     isEmailValid &&
+    isSvuMailValid &&
+    isProgramIdValid &&
     isPasswordValid &&
     isConfirmPasswordValid &&
     isBirthDateValid &&
@@ -60,12 +84,13 @@ const isEmailValid = (email) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ✅ 5. تفعيل الـ Touched لكل الحقول
+    // تفعيل الـ Touched لكل الحقول
     setFirstNameTouched(true);
-    setFatherNameTouched(true);
     setLastNameTouched(true);
     setUsernameTouched(true);
     setEmailTouched(true);
+    setSvuMailTouched(true);
+    setProgramIdTouched(true);
     setPasswordTouched(true);
     setConfirmPasswordTouched(true);
     setBirthDateTouched(true);
@@ -80,13 +105,14 @@ const isEmailValid = (email) => {
 
     const dataToSend = {
       firstName,
-      fatherName,
       lastName,
       username,
       email,
+      svuMail,
+      programId: parseInt(programId),
       password,
       birthDate,
-      gender
+      gender,
     };
 
     const result = await authService.register(dataToSend);
@@ -126,21 +152,6 @@ const isEmailValid = (email) => {
               )}
             </div>
 
-            {/* اسم الأب */}
-            <div className="form-group form-col-half">
-              <label>اسم الأب</label>
-              <input
-                type="text"
-                className={`form-input ${fatherNameTouched && !isFatherNameValid ? "error" : ""}`}
-                value={fatherName}
-                onChange={(e) => setFatherName(e.target.value)}
-                onBlur={() => setFatherNameTouched(true)}
-              />
-              {fatherNameTouched && !isFatherNameValid && (
-                <span className="form-error-text">اسم الأب مطلوب (اسم صحيح)</span>
-              )}
-            </div>
-
             {/* الكنية */}
             <div className="form-group form-col-half">
               <label>الكنية</label>
@@ -152,7 +163,7 @@ const isEmailValid = (email) => {
                 onBlur={() => setLastNameTouched(true)}
               />
               {lastNameTouched && !isLastNameValid && (
-                <span className="form-error-text">الكنية مطلوبة (كنية صحيحة)</span>
+                <span className="form-error-text">الكنية مطلوبة (حرفين على الأقل)</span>
               )}
             </div>
 
@@ -167,12 +178,12 @@ const isEmailValid = (email) => {
                 onBlur={() => setUsernameTouched(true)}
               />
               {usernameTouched && !isUsernameValid && (
-                <span className="form-error-text">اسم المستخدم مطلوب (3 أحرف على الأقل)</span>
+                <span className="form-error-text">اسم المستخدم مطلوب (3-20 حرف، أحرف وأرقام و _ فقط)</span>
               )}
             </div>
 
-            {/* البريد الإلكتروني */}
-            <div className="form-group form-col-full">
+            {/* البريد الإلكتروني الشخصي */}
+            <div className="form-group form-col-half">
               <label>البريد الإلكتروني</label>
               <input
                 type="email"
@@ -183,6 +194,47 @@ const isEmailValid = (email) => {
               />
               {emailTouched && !isEmailValid && (
                 <span className="form-error-text">البريد الإلكتروني غير صحيح</span>
+              )}
+            </div>
+
+            {/* البريد الجامعي SVU */}
+            <div className="form-group form-col-half">
+              <label>البريد الجامعي (SVU)</label>
+              <input
+                type="email"
+                className={`form-input ${svuMailTouched && !isSvuMailValid ? "error" : ""}`}
+                value={svuMail}
+                onChange={(e) => setSvuMail(e.target.value)}
+                onBlur={() => setSvuMailTouched(true)}
+                placeholder="username_123456@svuonline.org"
+              />
+              {svuMailTouched && !isSvuMailValid && (
+                <span className="form-error-text">البريد الجامعي يجب أن يكون صحيح</span>
+              )}
+            </div>
+
+            {/* البرنامج */}
+            <div className="form-group form-col-full">
+              <label>البرنامج</label>
+              <select
+                className={`form-input ${programIdTouched && !isProgramIdValid ? "error" : ""}`}
+                value={programId}
+                onChange={(e) => setProgramId(e.target.value)}
+                onBlur={() => setProgramIdTouched(true)}
+                disabled={loadingPrograms}
+              >
+                <option value="">-- اختر البرنامج --</option>
+                {programs.map((program) => (
+                  <option key={program.id} value={program.id}>
+                    {program.name}
+                  </option>
+                ))}
+              </select>
+              {programIdTouched && !isProgramIdValid && (
+                <span className="form-error-text">الرجاء اختيار البرنامج</span>
+              )}
+              {loadingPrograms && (
+                <span className="loading-text">جاري تحميل البرامج...</span>
               )}
             </div>
 
@@ -197,7 +249,7 @@ const isEmailValid = (email) => {
                 onBlur={() => setPasswordTouched(true)}
               />
               {passwordTouched && !isPasswordValid && (
-                <span className="form-error-text">8 أحرف مع حرف كبير ورقم</span>
+                <span className="form-error-text">8 أحرف مع حرف كبير ورقم على الأقل</span>
               )}
             </div>
 
@@ -251,10 +303,11 @@ const isEmailValid = (email) => {
           </div>
 
           <div>
-            <button 
-              type="submit" 
-              className="form-button" 
+            <button
+              type="submit"
+              className="normalButton"
               disabled={loading}
+              style={{ width: "100%", marginBottom: "20px" }}
             >
               {loading ? "جاري التسجيل..." : "انشاء حساب"}
             </button>

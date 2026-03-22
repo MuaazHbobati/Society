@@ -99,8 +99,9 @@ export default function LoginForm() {
           <div>
             <button 
               type="submit" 
-              className="form-button" 
-              disabled={loading}
+              className="normalButton" 
+              disabled={loading} 
+              style={{width: "100%", marginBottom:"20px"}}
             >
               {loading ? "جاري تسجيل الدخول..." : "دخول"}
             </button>

@@ -1,77 +1,55 @@
 // features/partners/components/Cards/CreateTeamFormationCard/CreateTeamFormationCard.jsx
 import React, { useState, useEffect } from "react";
 import { createTeamFormation } from "../../../services/partnersService";
-import {getAllPrograms, getSubjectsByProgram,} from "../../../services/programService";
+import { getMySubjects } from "../../../services/programService";
 import "./CreateTeamFormationCard.css";
 
 const CreateTeamFormationCard = ({ onFormationCreated }) => {
    
-  const [programs, setPrograms] = useState([]);
   const [subjects, setSubjects] = useState([]);
-  const [loadingPrograms, setLoadingPrograms] = useState(false);
   const [loadingSubjects, setLoadingSubjects] = useState(false);
+  const [errorSubjects, setErrorSubjects] = useState(false);
 
-  
   const [tutorName, setTutorName] = useState("");
   const [description, setDescription] = useState("");
   const [className, setClassName] = useState("");
-  const [programId, setProgramId] = useState("");
   const [subjectId, setSubjectId] = useState("");
   const [maxMembers, setMaxMembers] = useState(20);
 
   const [tutorNameTouched, setTutorNameTouched] = useState(false);
   const [descriptionTouched, setDescriptionTouched] = useState(false);
   const [classNameTouched, setClassNameTouched] = useState(false);
-  const [programIdTouched, setProgramIdTouched] = useState(false);
   const [subjectIdTouched, setSubjectIdTouched] = useState(false);
   const [maxMembersTouched, setMaxMembersTouched] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState("");
 
-  
+  // ✅ جلب المواد الخاصة ببرنامج المستخدم (بدون الحاجة لـ programId)
   useEffect(() => {
-    fetchPrograms();
+    const fetchMySubjects = async () => {
+      setLoadingSubjects(true);
+      setErrorSubjects(false);
+      try {
+        const data = await getMySubjects();
+        setSubjects(data || []);
+        if (!data || data.length === 0) {
+          setErrorSubjects(true);
+        }
+      } catch (error) {
+        console.error("Failed to fetch subjects:", error);
+        setErrorSubjects(true);
+        setSubjects([]);
+      } finally {
+        setLoadingSubjects(false);
+      }
+    };
+    fetchMySubjects();
   }, []);
-  
-  useEffect(() => {
-    if (programId) {
-      fetchSubjectsByProgram(programId);
-      setSubjectId("");
-    } else {
-      setSubjects([]);
-    }
-  }, [programId]);
-
-  const fetchPrograms = async () => {
-    setLoadingPrograms(true);
-    try {
-      const data = await getAllPrograms();
-      setPrograms(data || []);
-    } catch (error) {
-      console.error("Failed to fetch programs:", error);
-    } finally {
-      setLoadingPrograms(false);
-    }
-  };
-
-  const fetchSubjectsByProgram = async (id) => {
-    setLoadingSubjects(true);
-    try {
-      const data = await getSubjectsByProgram(id);
-      setSubjects(data || []);
-    } catch (error) {
-      console.error("Failed to fetch subjects:", error);
-    } finally {
-      setLoadingSubjects(false);
-    }
-  };
 
   const isTutorNameValid = tutorName.trim().length >= 3;
   const isDescriptionValid = description.trim().length >= 10;
-  const isClassNameValid =
-    className.trim().length >= 1 && className.trim().length <= 5;
-  const isProgramIdValid = programId !== "" && Number(programId) > 0;
+  const isClassNameValid = className.trim().length >= 1 && className.trim().length <= 5;
   const isSubjectIdValid = subjectId !== "" && Number(subjectId) > 0;
   const isMaxMembersValid = maxMembers >= 2 && maxMembers <= 20;
 
@@ -79,7 +57,6 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
     isTutorNameValid &&
     isDescriptionValid &&
     isClassNameValid &&
-    isProgramIdValid &&
     isSubjectIdValid &&
     isMaxMembersValid;
 
@@ -89,7 +66,6 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
     setTutorNameTouched(true);
     setDescriptionTouched(true);
     setClassNameTouched(true);
-    setProgramIdTouched(true);
     setSubjectIdTouched(true);
     setMaxMembersTouched(true);
 
@@ -98,11 +74,11 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
     setLoading(true);
     setApiError("");
 
+    // ✅ نرسل فقط subjectId (بدون programId)
     const dataToSend = {
       tutorName,
       description,
       className,
-      programId: Number(programId),
       subjectId: Number(subjectId),
       maxMembers: Number(maxMembers),
     };
@@ -111,17 +87,16 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
       const newFormation = await createTeamFormation(dataToSend);
       onFormationCreated(newFormation);
 
+      // إعادة تعيين الحقول
       setTutorName("");
       setDescription("");
       setClassName("");
-      setProgramId("");
       setSubjectId("");
       setMaxMembers(20);
 
       setTutorNameTouched(false);
       setDescriptionTouched(false);
       setClassNameTouched(false);
-      setProgramIdTouched(false);
       setSubjectIdTouched(false);
       setMaxMembersTouched(false);
     } catch (error) {
@@ -138,19 +113,44 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
     setTutorName("");
     setDescription("");
     setClassName("");
-    setProgramId("");
     setSubjectId("");
     setMaxMembers(20);
 
     setTutorNameTouched(false);
     setDescriptionTouched(false);
     setClassNameTouched(false);
-    setProgramIdTouched(false);
     setSubjectIdTouched(false);
     setMaxMembersTouched(false);
 
     setApiError("");
   };
+
+  // ✅ حالة تحميل المواد
+  if (loadingSubjects) {
+    return (
+      <div className="create-formation-card">
+        <div className="create-form">
+          <h3>تشكيل فريق جديد</h3>
+          <div className="loading-state">جاري تحميل المواد...</div>
+        </div>
+      </div>
+    );
+  }
+
+  // ✅ حالة عدم وجود مواد
+  if (errorSubjects) {
+    return (
+      <div className="create-formation-card">
+        <div className="create-form">
+          <h3>تشكيل فريق جديد</h3>
+          <div className="error-state">
+            <p>لا توجد مواد متاحة لبرنامجك.</p>
+            <p>يرجى التواصل مع الدعم الفني.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="create-formation-card">
@@ -161,6 +161,7 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
 
         <form onSubmit={handleSubmit} noValidate>
           <div className="form-grid">
+            {/* اسم المدرس */}
             <div className="form-group form-col-half">
               <label htmlFor="tutorName">اسم المدرس</label>
               <input
@@ -179,6 +180,7 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
               )}
             </div>
 
+            {/* الصف */}
             <div className="form-group form-col-half">
               <label htmlFor="className">الصف</label>
               <input
@@ -196,7 +198,7 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
               )}
             </div>
 
-            {/* الوصف كامل العرض */}
+            {/* الوصف */}
             <div className="form-group form-col-full">
               <label htmlFor="description">الوصف</label>
               <textarea
@@ -215,33 +217,8 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
               )}
             </div>
 
-            {/* البرنامج والمادة */}
-            <div className="form-group form-col-half">
-              <label htmlFor="programId">البرنامج</label>
-              <select
-                id="programId"
-                className={`form-input ${programIdTouched && !isProgramIdValid ? "error" : ""}`}
-                value={programId}
-                onChange={(e) => setProgramId(e.target.value)}
-                onBlur={() => setProgramIdTouched(true)}
-                disabled={loadingPrograms}
-              >
-                <option value="">-- اختر البرنامج --</option>
-                {programs.map((program) => (
-                  <option key={program.id} value={program.id}>
-                    {program.name}
-                  </option>
-                ))}
-              </select>
-              {programIdTouched && !isProgramIdValid && (
-                <span className="form-error-text">الرجاء اختيار البرنامج</span>
-              )}
-              {loadingPrograms && (
-                <span className="loading-text">جاري تحميل البرامج...</span>
-              )}
-            </div>
-
-            <div className="form-group form-col-half">
+            {/* المادة - فقط! بدون برنامج */}
+            <div className="form-group form-col-full">
               <label htmlFor="subjectId">المادة</label>
               <select
                 id="subjectId"
@@ -249,7 +226,6 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
                 value={subjectId}
                 onChange={(e) => setSubjectId(e.target.value)}
                 onBlur={() => setSubjectIdTouched(true)}
-                disabled={!programId || loadingSubjects}
               >
                 <option value="">-- اختر المادة --</option>
                 {subjects.map((subject) => (
@@ -260,9 +236,6 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
               </select>
               {subjectIdTouched && !isSubjectIdValid && (
                 <span className="form-error-text">الرجاء اختيار المادة</span>
-              )}
-              {loadingSubjects && (
-                <span className="loading-text">جاري تحميل المواد...</span>
               )}
             </div>
 
@@ -290,7 +263,7 @@ const CreateTeamFormationCard = ({ onFormationCreated }) => {
             <button
               type="submit"
               className="normalButton"
-              disabled={loading || loadingPrograms || !isFormValid}
+              disabled={loading || !isFormValid}
             >
               {loading ? "جاري النشر..." : "نشر التشكيل"}
             </button>

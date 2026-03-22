@@ -99,9 +99,8 @@ const TeamFormationCard = ({ formation }) => {
         </div>
       </div>
 
-      <button className="normalButton" disabled={status === 2}>
-        {status === 2 ? <FaLock size={14} /> : <FaPlus size={14} />}
-        {status === 2 ? " مغلق" : " انضمام"}
+      <button className="normalButton">
+        عرض تفاصيل أكثر
       </button>
     </div>
   );

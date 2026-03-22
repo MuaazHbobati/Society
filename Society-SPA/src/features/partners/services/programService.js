@@ -1,5 +1,6 @@
 // features/partners/services/programService.js
 import axios from 'axios';
+
 const API_BASE_URL = "http://192.168.1.111:5000/api";
 
 const authHeaders = () => {
@@ -27,6 +28,19 @@ export const getSubjectsByProgram = async (programId) => {
     return response.data;
   } catch (error) {
     console.error('Error fetching subjects:', error);
+    return [];
+  }
+};
+
+// ✅ دالة جديدة: جلب مواد المستخدم الحالي (بدون الحاجة لـ programId)
+export const getMySubjects = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/Program/my-subjects`, {
+      headers: authHeaders()
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching my subjects:', error);
     return [];
   }
 };
