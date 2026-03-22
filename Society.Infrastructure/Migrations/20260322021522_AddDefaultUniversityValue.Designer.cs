@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Society.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using Society.Infrastructure.Data;
 namespace Society.Infrastructure.Migrations
 {
     [DbContext(typeof(SocietyDbContext))]
-    partial class SocietyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260322021522_AddDefaultUniversityValue")]
+    partial class AddDefaultUniversityValue
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,6 +38,11 @@ namespace Society.Infrastructure.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("FatherName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -260,10 +268,6 @@ namespace Society.Infrastructure.Migrations
                     b.Property<int>("ProgramId")
                         .HasColumnType("int");
 
-                    b.Property<string>("SVUMail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -272,8 +276,6 @@ namespace Society.Infrastructure.Migrations
 
                     b.HasIndex("PersonId")
                         .IsUnique();
-
-                    b.HasIndex("ProgramId");
 
                     b.ToTable("Users");
                 });
@@ -290,6 +292,9 @@ namespace Society.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Faculty")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Major")
@@ -393,15 +398,7 @@ namespace Society.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Society.Domain.Entities.Program", "Program")
-                        .WithMany()
-                        .HasForeignKey("ProgramId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Person");
-
-                    b.Navigation("Program");
                 });
 
             modelBuilder.Entity("Society.Domain.Entities.UserProfile", b =>

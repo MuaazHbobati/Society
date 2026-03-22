@@ -23,6 +23,12 @@ namespace Society.Infrastructure.Repositories
             return await _context.Programs.OrderBy(p => p.Name).ToListAsync();
         }
 
+
+        public async Task<Program?> GetProgramByIdAsync(int programId)
+        {
+            return await _context.Programs.FindAsync(programId);
+        }
+
         public async Task<IEnumerable<Subject>> GetSubjectsByProgramIdAsync(int programId)
         {
             return await _context.ProgramSubjects.Where(ps=> ps.ProgramId == programId)

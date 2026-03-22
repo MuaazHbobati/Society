@@ -49,7 +49,8 @@ namespace Society.Infrastructure.Repositories
 
         public async Task<User> GetUserByEmailAsync(string email)
         {
-            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            return await _context.Users
+                  .Include(u => u.Program).FirstOrDefaultAsync(u => u.Email == email);
         }
 
         public async Task<User?> GetUserWithProfileAsync(int userId)
@@ -57,6 +58,7 @@ namespace Society.Infrastructure.Repositories
             return await _context.Users
                 .Include(u => u.Profile)
                  .Include(u => u.Person)
+                   .Include(u => u.Program)
                 .FirstOrDefaultAsync(u => u.Id == userId);
         }
     }
