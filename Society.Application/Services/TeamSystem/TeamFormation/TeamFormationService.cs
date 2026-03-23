@@ -109,8 +109,12 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
                 ProgramName = formation.ProgramSubject.Program.Name,
                 SubjectName = formation.ProgramSubject.Subject.Name,
                 MaxMembers = formation.MaxMembers,
-                CurrentMembersCount = formation.CurrentMembersCount,
-                Status = formation.Status
+                CurrentMembersCount = formation.CurrentMembersCount,               
+                Status = formation.Status,
+                CreatorSVUMail = formation.Creator.SVUMail,
+                CreatorCity = formation.Creator.Profile.City,
+                CreatorCountry = formation.Creator.Profile.Country,
+                CreatorProfileBio = formation.Creator.Profile.Bio
             };
         }
 

@@ -20,6 +20,10 @@ namespace Society.Application.DTOs.TeamSystem.TeamFormation
         public string CreatorName { get; set; }
         public string CreatorUsername { get; set; }
         public string CreatorPhoto { get; set; }
+        public string CreatorSVUMail { get; set; }
+        public string CreatorCity { get; set; }
+        public string CreatorCountry { get; set; }
+        public string CreatorProfileBio { get; set; }
         public TeamFormationStatus Status { get; set; }
 
     }
