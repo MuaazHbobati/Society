@@ -1,7 +1,6 @@
-// features/partners/services/partnersService.js
 import axios from 'axios';
 
-const API_BASE_URL = "http://192.168.1.111:5000/api";
+const API_BASE_URL = "http://192.168.252.75:5000/api";
 const authHeaders = () => {
   const token = localStorage.getItem('token');
   return token ? { Authorization: `Bearer ${token}` } : {};
@@ -15,24 +14,20 @@ export const getTeamFormations = async () => {
     
     console.log('استجابة API:', response);
     console.log('بيانات الاستجابة:', response.data);
-    
-    // ✅ تأكد من إرجاع مصفوفة دائماً
+
     if (Array.isArray(response.data)) {
       return response.data;
     } else if (response.data?.data && Array.isArray(response.data.data)) {
-      // إذا كانت البيانات مغلفة في خاصية data
       return response.data.data;
     } else if (response.data?.items && Array.isArray(response.data.items)) {
-      // إذا كانت البيانات مغلفة في خاصية items
       return response.data.items;
     } else {
-      // إذا لم نعرف، رجع مصفوفة فارغة
       console.warn('البيانات ليست مصفوفة، رجع مصفوفة فارغة');
       return [];
     }
   } catch (error) {
     console.error('Error fetching team formations:', error);
-    return []; // ✅ رجع مصفوفة فارغة في حالة الخطأ
+    return [];
   }
 };
 
@@ -44,6 +39,18 @@ export const createTeamFormation = async (data) => {
     return response.data;
   } catch (error) {
     console.error('Error creating team formation:', error);
+    throw error;
+  }
+}
+
+export const getTeamFormationById = async (id) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/TeamFormation/${id}`, {
+      headers: authHeaders()
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching formation by id:', error);
     throw error;
   }
 };

@@ -1,9 +1,11 @@
 import "./TeamFormationCard.css";
 import { FaUserCircle, FaChalkboardTeacher, FaBook, FaGraduationCap, FaUsers, FaLock, FaPlus, FaRegCommentDots, FaTag, FaUser } from "react-icons/fa";
 import { MdOutlinePending, MdDone, MdClose } from "react-icons/md";
+import {Link} from "react-router-dom";
 
 const TeamFormationCard = ({ formation }) => {
   const {
+    id,
     creatorPhoto,
     creatorName,
     creatorUsername,
@@ -98,10 +100,12 @@ const TeamFormationCard = ({ formation }) => {
           ></div>
         </div>
       </div>
-
-      <button className="normalButton">
+<Link to={`/partners/team-formations/${id}`} >
+ <button className="normalButton">
         عرض تفاصيل أكثر
-      </button>
+        
+      </button></Link>
+     
     </div>
   );
 };

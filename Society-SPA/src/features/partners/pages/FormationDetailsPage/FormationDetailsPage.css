@@ -1,0 +1,90 @@
+.formation-details-page {
+  padding: 0px;
+  min-height: 100%;
+  background-color: var(--background2, #f8fafc);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--primary-blue, #2563eb);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  border-radius: 40px;
+}
+
+.back-button:hover {
+  background-color: var(--off-white, #f8fafc);
+  transform: translateX(-4px);
+}
+
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 20px;
+  text-align: center;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--gray-light, #e2e8f0);
+  border-top-color: var(--primary-blue, #2563eb);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container p {
+  color: var(--gray-dark, #334155);
+  font-size: 1rem;
+}
+
+.error-icon {
+  font-size: 48px;
+}
+
+.error-message {
+  color: var(--error, #dc2626);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.back-to-partners-btn {
+  background-color: var(--primary-blue, #2563eb);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-to-partners-btn:hover {
+  background-color: var(--primary-dark, #1d4ed8);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    margin-bottom: 16px;
+  }
+}

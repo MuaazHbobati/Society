@@ -1,7 +1,6 @@
-// features/partners/services/programService.js
 import axios from 'axios';
 
-const API_BASE_URL = "http://192.168.1.111:5000/api";
+const API_BASE_URL = "http://192.168.252.75:5000/api";
 
 const authHeaders = () => {
   const token = localStorage.getItem('token');
@@ -32,7 +31,6 @@ export const getSubjectsByProgram = async (programId) => {
   }
 };
 
-// ✅ دالة جديدة: جلب مواد المستخدم الحالي (بدون الحاجة لـ programId)
 export const getMySubjects = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/Program/my-subjects`, {

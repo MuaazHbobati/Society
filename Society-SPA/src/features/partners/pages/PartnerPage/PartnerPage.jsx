@@ -10,7 +10,6 @@ const PartnerPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filter, setFilter] = useState('all'); // all, open, closed, full
 
   useEffect(() => {
     const fetchFormations = async () => {
@@ -36,21 +35,12 @@ const PartnerPage = () => {
     setFormations(prev => [newFormation, ...prev]);
   };
 
-  // تصفية التشكيلات
   const filteredFormations = formations.filter(formation => {
-    // فلتر البحث
-    const matchesSearch = 
-      (formation.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    return (
+      formation.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       formation.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      formation.programName?.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    // فلتر الحالة
-    if (filter === 'all') return matchesSearch;
-    if (filter === 'open') return matchesSearch && formation.status === 0;
-    if (filter === 'full') return matchesSearch && formation.status === 1;
-    if (filter === 'closed') return matchesSearch && formation.status === 2;
-    
-    return matchesSearch;
+      formation.programName?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   });
 
   return (
@@ -71,36 +61,6 @@ const PartnerPage = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="search-input"
             />
-          </div>
-
-          <div className="filter-buttons">
-            <button
-              className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
-              onClick={() => setFilter('all')}
-            >
-              الكل
-            </button>
-            <button
-              className={`filter-btn ${filter === 'open' ? 'active' : ''}`}
-              onClick={() => setFilter('open')}
-            >
-              <span className="status-dot open"></span>
-              مفتوح
-            </button>
-            <button
-              className={`filter-btn ${filter === 'full' ? 'active' : ''}`}
-              onClick={() => setFilter('full')}
-            >
-              <span className="status-dot full"></span>
-              مكتمل
-            </button>
-            <button
-              className={`filter-btn ${filter === 'closed' ? 'active' : ''}`}
-              onClick={() => setFilter('closed')}
-            >
-              <span className="status-dot closed"></span>
-              مغلق
-            </button>
           </div>
         </div>
       </div>
