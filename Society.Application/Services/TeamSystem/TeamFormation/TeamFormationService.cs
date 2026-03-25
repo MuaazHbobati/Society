@@ -94,6 +94,42 @@ namespace Society.Application.Services.TeamSystem.TeamFormation
             return MapToDetailsDto(formation);
         }
 
+        public async Task<FormationResponseDto>GetFormationsAsync(int userId, FormationRequestDto formationRequest)
+        {
+            var user = await _userRepository.GetUserWithProfileAsync(userId);
+            var formations = await _repository.GetFormationsAsync(formationRequest, user.ProgramId);
+            
+            if (formations.Items.Count == 0)
+            {
+                return new FormationResponseDto
+                {
+                    Items = new List<TeamFormationListDto>(),
+                    HasMore = false
+                };
+
+            }
+            var formationList = formations.Items.Select(f=> new TeamFormationListDto
+            {
+                Id = f.Id,
+                CreatorName = f.Creator.Person.FirstName + " " + f.Creator.Person.LastName,
+                CreatorUsername = f.Creator.Username,
+                CreatorPhoto = f.Creator.Profile.ProfilePictureUrl,
+                TutorName = f.TutorName,
+                Description = f.Description,
+                ClassName = f.ClassName,
+                ProgramName = f.ProgramSubject.Program.Name,
+                SubjectName = f.ProgramSubject.Subject.Name,
+                MaxMembers = f.MaxMembers,
+                CurrentMembersCount = f.CurrentMembersCount,
+                Status = f.Status
+            }).ToList();
+
+            return new FormationResponseDto
+            {
+                Items = formationList,
+                HasMore = formations.HasMore
+            };
+        }
 
         private TeamFormationDetailsDto MapToDetailsDto(Society.Domain.Entities.TeamFormation formation)
         {

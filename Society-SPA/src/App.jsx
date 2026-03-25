@@ -15,7 +15,7 @@ import RegisterPage from "./features/auth/pages/RegisterPage/RegisterPage.jsx";
 import LoginPage from "./features/auth/pages/LoginPage/LoginPage.jsx";
 import HomePage from "./features/home/pages/HomePage/HomePage.jsx";
 import HomeFeedPage from "./features/home/components/HomeFeedPage/HomeFeedPage.jsx"
-
+import FormationDetailsPage from "./features/partners/pages/FormationDetailsPage/FormationDetailsPage.jsx";
 import { getToken } from "./features/auth/services/authService"; 
 
 import PartnerPage from "./features/partners/pages/PartnerPage/PartnerPage.jsx"; // <-- أضف هذا السطر
@@ -69,6 +69,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />}>
             <Route index element={<HomeFeedPage />} />
             <Route path="partners" element={<PartnerPage />} />
+            <Route path="partners/team-formations/:id" element={<FormationDetailsPage />} />
           </Route>
         )}
 

@@ -20,6 +20,7 @@
 }
 .form-ahref {
   font-size: 15px;
+  font-weight: 500;
   color: var(--primary-blue);
   text-decoration: none;
 }

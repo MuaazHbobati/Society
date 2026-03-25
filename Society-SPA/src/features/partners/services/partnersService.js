@@ -1,6 +1,6 @@
 import axios from 'axios';
+import {API_BASE_URL} from "../../../shared/api/API_BASE_URL.js"
 
-const API_BASE_URL = "http://192.168.252.75:5000/api";
 const authHeaders = () => {
   const token = localStorage.getItem('token');
   return token ? { Authorization: `Bearer ${token}` } : {};
@@ -52,5 +52,28 @@ export const getTeamFormationById = async (id) => {
   } catch (error) {
     console.error('Error fetching formation by id:', error);
     throw error;
+  }
+};
+
+export const getFormations = async (subjectId = null, lastId = null) => {
+  try {
+    let url = `${API_BASE_URL}/TeamFormation?`;
+    
+    if (subjectId) {
+      url += `subjectId=${subjectId}&`;
+    }
+    
+    if (lastId) {
+      url += `lastId=${lastId}`;
+    }
+    
+    const response = await axios.get(url, {
+      headers: authHeaders()
+    });
+    
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching formations:', error);
+    return { items: [], hasMore: false };
   }
 };

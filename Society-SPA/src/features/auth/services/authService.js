@@ -1,6 +1,4 @@
-// src/features/auth/services/authService.js
-
-const API_BASE_URL = "http://192.168.1.111:5000/api";
+import {API_BASE_URL} from "../../../shared/api/API_BASE_URL.js"
 
 const setToken = (token) => {
   localStorage.setItem("token", token);
@@ -15,7 +13,6 @@ export const removeToken = () => {
 };
 
 export const authService = {
-  // ✅ Register
   async register(userData) {
     try {
       const response = await fetch(`${API_BASE_URL}/Auth/register`, {
@@ -36,7 +33,6 @@ export const authService = {
     }
   },
 
-  // ✅ Login
   async login(credentials) {
     try {
       const response = await fetch(`${API_BASE_URL}/Auth/Login`, {
@@ -61,12 +57,10 @@ export const authService = {
     }
   },
 
-  // ✅ Logout
   logout() {
     removeToken();
   },
 
-  // ✅ NEW: جلب بيانات المستخدم الحالي
   async getCurrentUser() {
     try {
       const token = getToken();

@@ -146,6 +146,7 @@ export default function RegisterForm() {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 onBlur={() => setFirstNameTouched(true)}
+                placeholder="مثال: Mohammad"
               />
               {firstNameTouched && !isFirstNameValid && (
                 <span className="form-error-text">الاسم الأول مطلوب (حرفين على الأقل)</span>
@@ -161,6 +162,7 @@ export default function RegisterForm() {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 onBlur={() => setLastNameTouched(true)}
+                placeholder="مثال: Al Saeed"
               />
               {lastNameTouched && !isLastNameValid && (
                 <span className="form-error-text">الكنية مطلوبة (حرفين على الأقل)</span>
@@ -176,6 +178,7 @@ export default function RegisterForm() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 onBlur={() => setUsernameTouched(true)}
+                placeholder="مثال: Mohammad_1234"
               />
               {usernameTouched && !isUsernameValid && (
                 <span className="form-error-text">اسم المستخدم مطلوب (3-20 حرف، أحرف وأرقام و _ فقط)</span>
@@ -191,6 +194,7 @@ export default function RegisterForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 onBlur={() => setEmailTouched(true)}
+                placeholder="مثال: MohammadAlSaeed@gmail.com"
               />
               {emailTouched && !isEmailValid && (
                 <span className="form-error-text">البريد الإلكتروني غير صحيح</span>
@@ -205,8 +209,7 @@ export default function RegisterForm() {
                 className={`form-input ${svuMailTouched && !isSvuMailValid ? "error" : ""}`}
                 value={svuMail}
                 onChange={(e) => setSvuMail(e.target.value)}
-                onBlur={() => setSvuMailTouched(true)}
-                placeholder="username_123456@svuonline.org"
+                onBlur={() => setSvuMailTouched(true)}               
               />
               {svuMailTouched && !isSvuMailValid && (
                 <span className="form-error-text">البريد الجامعي يجب أن يكون صحيح</span>
@@ -247,6 +250,7 @@ export default function RegisterForm() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 onBlur={() => setPasswordTouched(true)}
+                placeholder="**********"
               />
               {passwordTouched && !isPasswordValid && (
                 <span className="form-error-text">8 أحرف مع حرف كبير ورقم على الأقل</span>
@@ -262,6 +266,7 @@ export default function RegisterForm() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 onBlur={() => setConfirmPasswordTouched(true)}
+                placeholder="**********"
               />
               {confirmPasswordTouched && !isConfirmPasswordValid && (
                 <span className="form-error-text">كلمة المرور غير متطابقة</span>

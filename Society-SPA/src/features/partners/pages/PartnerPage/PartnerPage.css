@@ -54,7 +54,45 @@
   gap: 8px;
   flex-wrap: wrap;
 }
+/* PartnerPage.css - إضافة */
 
+.subject-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.loading-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.spinner-small {
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--gray-light, #e2e8f0);
+  border-top-color: var(--primary-blue, #2563eb);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.no-more {
+  text-align: center;
+  padding: 20px;
+  color: var(--gray-medium, #94a3b8);
+  font-size: 0.9rem;
+}
+
+.loading-text {
+  font-size: 0.8rem;
+  color: var(--gray-medium, #94a3b8);
+  margin-right: 8px;
+}
 .filter-btn {
   display: flex;
   align-items: center;

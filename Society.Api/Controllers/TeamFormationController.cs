@@ -21,12 +21,27 @@ namespace Society.Api.Controllers
             _service = service;
         }
 
-        // GET: api/TeamFormation
-        [HttpGet]
+        // GET: api/TeamFormation/all
+        [HttpGet("all")]
         public async Task<ActionResult<List<TeamFormationListDto>>> GetAll()
         {
             var formations = await _service.GetAllAsync();
             return Ok(formations);
+        }
+
+        // GET: api/TeamFormation/
+        [HttpGet]
+        public async Task<ActionResult<FormationResponseDto>> GetFormations([FromQuery] FormationRequestDto request)
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userIdClaim == null)
+            {
+                return Unauthorized(new { message = "User not found in token" });
+            }
+            int userId = int.Parse(userIdClaim);
+
+            var result = await _service.GetFormationsAsync(userId, request);
+            return Ok(result);
         }
 
         // GET: api/TeamFormation/{id}
