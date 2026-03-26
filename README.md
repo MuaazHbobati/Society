@@ -85,37 +85,57 @@ This ensures the system is **scalable**, **testable**, and **maintainable**.
 
 ### Landing Page
 
-| Desktop                                                                                                                                  | Mobile                                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/landing-desktop.png" height="400"/> | <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/landing-mobile.png" height="400"/> |
+**Desktop**  
+<img src="https://i.imgur.com/3iSw7CE.png" height="400"/>
+
+**Mobile**  
+<img src="https://i.imgur.com/8OQo5Lu.png" height="400"/>
+
+---
 
 ### Registration Page
 
-| Desktop                                                                                                                                   | Mobile                                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/register-desktop.png" height="400"/> | <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/register-mobile.png" height="400"/> |
+**Desktop**  
+<img src="https://i.imgur.com/CToZv0a.png" height="400"/>
+
+**Mobile**  
+<img src="https://i.imgur.com/LLQQshG.png" height="400"/>
+
+---
 
 ### Home Dashboard
 
-| Desktop                                                                                                                               | Mobile                                                                                                                               |
-| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/home-desktop.png" height="400"/> | <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/home-mobile.png" height="400"/> |
+**Desktop**  
+<img src="https://i.imgur.com/KQnaDuH.png" height="400"/>
+
+**Mobile**  
+<img src="https://i.imgur.com/4dtQVKS.png" height="400"/>
+
+---
 
 ### Team Formation System
 
-| Desktop                                                                                                                                | Desktop 2                                                                                                                               |
-| -------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/teams-desktop.png" height="400"/> | <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/teams-desktop2.png" height="400"/> |
+**Desktop 1**  
+<img src="https://i.imgur.com/SI3WOqS.png" height="400"/>
 
-| Mobile                                                                                                                                | Menu Mobile                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/teams-mobile.png" height="400"/> | <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/menu-mobile.png" height="400"/> |
+**Desktop 2**  
+<img src="https://i.imgur.com/kmsBaSo.png" height="400"/>
+
+**Mobile**  
+<img src="https://i.imgur.com/Cyx9z3N.png" height="400"/>
+
+**Menu Mobile**  
+<img src="https://i.imgur.com/QsRD4fT.png" height="400"/>
+
+---
 
 ### Team Details
 
-| Desktop                                                                                                                                       | Mobile                                                                                                                                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/team-details-desktop.png" height="400"/> | <img src="https://raw.githubusercontent.com/MuaazHbobati/Society/main/Society-SPA/public/screenshots/team-details-mobile.png" height="400"/> |
+**Desktop**  
+<img src="https://i.imgur.com/y4xjbuP.png" height="400"/>
+
+**Mobile**  
+<img src="https://i.imgur.com/8MNLzCq.png" height="400"/>
 
 ---
 
