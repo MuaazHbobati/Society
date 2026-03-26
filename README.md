@@ -1,8 +1,11 @@
 # Society
 
-<p align="center">
-  <img src="Society-SPA/src/shared/assets/society-logo-big.png" alt="Society Logo" width="150"/>
-</p>
+> **© 2026 Mohammad Muaz Hbobati – All Rights Reserved**
+>
+> This repository is a **public archive** for portfolio and demonstration purposes only.
+> You may view the code for reference, but you are **not permitted** to copy, modify, distribute, or use it for any commercial purpose without explicit written permission.
+> The active development of this project continues in a **private repository**.
+
 ---
 
 ## 📖 The Problem
@@ -153,8 +156,6 @@ The app will open at `http://localhost:3000`
 
 ## 🔮 Roadmap
 
-- [x] Clean Architecture setup
-- [x] JWT Authentication
 - [x] Team Formation system (backend)
 - [x] React Landing Page
 - [x] Login / Register pages
@@ -166,10 +167,6 @@ The app will open at `http://localhost:3000`
 - [ ] Student job & internship marketplace
 
 ---
-
-## 📄 License
-
-MIT © [Mohammad Muaz Hbobati](https://github.com/MuaazHbobati)
 
 ## 🔗 Links
 
