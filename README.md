@@ -100,10 +100,10 @@ This ensures the system is **scalable**, **testable**, and **maintainable**.
 
 ### Team Formation System
 
-| Desktop                                                            | Mobile                                                                |
-| ------------------------------------------------------------------ | --------------------------------------------------------------------- |
-| ![Teams Desktop](Society-SPA/public/screenshots/teams-desktop.png) | ![Teams Desktop 2](Society-SPA/public/screenshots/teams-desktop2.png) |
-| ![Teams Mobile](Society-SPA/public/screenshots/teams-mobile.png)   | ![Menu Mobile](Society-SPA/public/screenshots/menu-mobile.png)        |
+| Desktop                                                               | Mobile                                                           |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| ![Teams Desktop](Society-SPA/public/screenshots/teams-desktop.png)    | ![Teams Mobile](Society-SPA/public/screenshots/teams-mobile.png) |
+| ![Teams Desktop 2](Society-SPA/public/screenshots/teams-desktop2.png) | ![Menu Mobile](Society-SPA/public/screenshots/menu-mobile.png)   |
 
 ### Team Details
 
