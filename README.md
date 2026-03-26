@@ -3,7 +3,8 @@
 <p align="center">
   <img src="Society-SPA/src/shared/assets/society-logo-big.png" alt="Society Logo" width="150"/>
 </p>
----
+
+## ![Test](https://i.imgur.com/3iSw7CE.png)
 
 ## 📖 The Problem
 
@@ -22,7 +23,7 @@ Every semester starts the same:
 - A backup Telegram channel
 - A Facebook group
 
-All for **one** subject.
+All for **One** subject.
 
 Thousands of messages.  
 Arguments. Spam. Forwarded jokes.  
@@ -82,34 +83,34 @@ This ensures the system is **scalable**, **testable**, and **maintainable**.
 
 ### Landing Page
 
-| Desktop                                                                | Mobile                                                               |
-| ---------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| ![Landing Desktop](Society-SPA/public/screenshots/landing-desktop.png) | ![Landing Mobile](Society-SPA/public/screenshots/landing-mobile.png) |
+| Desktop                                             | Mobile                                             |
+| --------------------------------------------------- | -------------------------------------------------- |
+| ![Landing Desktop](https://i.imgur.com/3iSw7CE.png) | ![Landing Mobile](https://i.imgur.com/8OQo5Lu.png) |
 
 ### Registration Page
 
-| Desktop                                                                  | Mobile                                                                 |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| ![Register Desktop](Society-SPA/public/screenshots/register-desktop.png) | ![Register Mobile](Society-SPA/public/screenshots/register-mobile.png) |
+| Desktop                                              | Mobile                                              |
+| ---------------------------------------------------- | --------------------------------------------------- |
+| ![Register Desktop](https://i.imgur.com/CToZv0a.png) | ![Register Mobile](https://i.imgur.com/LLQQshG.png) |
 
 ### Home Dashboard
 
-| Desktop                                                          | Mobile                                                         |
-| ---------------------------------------------------------------- | -------------------------------------------------------------- |
-| ![Home Desktop](Society-SPA/public/screenshots/home-desktop.png) | ![Home Mobile](Society-SPA/public/screenshots/home-mobile.png) |
+| Desktop                                          | Mobile                                          |
+| ------------------------------------------------ | ----------------------------------------------- |
+| ![Home Desktop](https://i.imgur.com/KQnaDuH.png) | ![Home Mobile](https://i.imgur.com/4dtQVKS.png) |
 
 ### Team Formation System
 
-| Desktop                                                            | Mobile                                                                |
-| ------------------------------------------------------------------ | --------------------------------------------------------------------- |
-| ![Teams Desktop](Society-SPA/public/screenshots/teams-desktop.png) | ![Teams Desktop 2](Society-SPA/public/screenshots/teams-desktop2.png) |
-| ![Teams Mobile](Society-SPA/public/screenshots/teams-mobile.png)   | ![Menu Mobile](Society-SPA/public/screenshots/menu-mobile.png)        |
+| Desktop                                           | Mobile                                              |
+| ------------------------------------------------- | --------------------------------------------------- |
+| ![Teams Desktop](https://i.imgur.com/SI3WOqS.png) | ![Teams Desktop 2](https://i.imgur.com/kmsBaSo.png) |
+| ![Teams Mobile](https://i.imgur.com/Cyx9z3N.png)  | ![Menu Mobile](https://i.imgur.com/QsRD4fT.png)     |
 
 ### Team Details
 
-| Desktop                                                                          | Mobile                                                                         |
-| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| ![Team Details Desktop](Society-SPA/public/screenshots/team-details-desktop.png) | ![Team Details Mobile](Society-SPA/public/screenshots/team-details-mobile.png) |
+| Desktop                                                  | Mobile                                                  |
+| -------------------------------------------------------- | ------------------------------------------------------- |
+| ![Team Details Desktop](https://i.imgur.com/y4xjbuP.png) | ![Team Details Mobile](https://i.imgur.com/8MNLzCq.png) |
 
 ---
 
