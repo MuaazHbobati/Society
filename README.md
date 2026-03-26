@@ -1,11 +1,5 @@
 # 🎓 Society
 
-### _Building structure where there is none._
-
-[![GitHub last commit](https://img.shields.io/github/last-commit/MuaazHbobati/Society)](https://github.com/MuaazHbobati/Society)
-[![.NET 8](https://img.shields.io/badge/.NET%208-512BD4?logo=.net)](https://dotnet.microsoft.com/)
-[![React](https://img.shields.io/badge/React-61DAFB?logo=react)](https://reactjs.org/)
-
 ---
 
 ## 📖 The Problem
@@ -83,59 +77,8 @@ This ensures the system is **scalable**, **testable**, and **maintainable**.
 
 ## 📸 Screenshots
 
-### Landing Page
-
 **Desktop**  
-<img src="https://i.imgur.com/3iSw7CE.png" height="400"/>
-
-**Mobile**  
-<img src="https://i.imgur.com/8OQo5Lu.png" height="400"/>
-
----
-
-### Registration Page
-
-**Desktop**  
-<img src="https://i.imgur.com/CToZv0a.png" height="400"/>
-
-**Mobile**  
-<img src="https://i.imgur.com/LLQQshG.png" height="400"/>
-
----
-
-### Home Dashboard
-
-**Desktop**  
-<img src="https://i.imgur.com/KQnaDuH.png" height="400"/>
-
-**Mobile**  
-<img src="https://i.imgur.com/4dtQVKS.png" height="400"/>
-
----
-
-### Team Formation System
-
-**Desktop 1**  
-<img src="https://i.imgur.com/SI3WOqS.png" height="400"/>
-
-**Desktop 2**  
-<img src="https://i.imgur.com/kmsBaSo.png" height="400"/>
-
-**Mobile**  
-<img src="https://i.imgur.com/Cyx9z3N.png" height="400"/>
-
-**Menu Mobile**  
-<img src="https://i.imgur.com/QsRD4fT.png" height="400"/>
-
----
-
-### Team Details
-
-**Desktop**  
-<img src="https://i.imgur.com/y4xjbuP.png" height="400"/>
-
-**Mobile**  
-<img src="https://i.imgur.com/8MNLzCq.png" height="400"/>
+<img src="https://i.imgur.com/y4xjbuP.png"/>
 
 ---
 
