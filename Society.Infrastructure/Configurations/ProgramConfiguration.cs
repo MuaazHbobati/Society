@@ -19,7 +19,6 @@ namespace Society.Infrastructure.Configurations
                    .IsRequired()
                    .HasMaxLength(200);
 
-            // 🔹 Relation: Program -> ProgramSubjects
             builder
                 .HasMany(p => p.ProgramSubjects)
                 .WithOne(ps => ps.Program)

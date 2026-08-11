@@ -15,14 +15,12 @@ namespace Society.Infrastructure.Configurations
         {
             builder.HasKey(ps => ps.Id);
 
-            // 🔹 Relation: ProgramSubject -> Program
             builder
                 .HasOne(ps => ps.Program)
                 .WithMany(p => p.ProgramSubjects)
                 .HasForeignKey(ps => ps.ProgramId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // 🔹 Relation: ProgramSubject -> Subject
             builder
                 .HasOne(ps => ps.Subject)
                 .WithMany(s => s.ProgramSubjects)

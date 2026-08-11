@@ -25,41 +25,35 @@ namespace Society.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Apply entity configurations
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(SocietyDbContext).Assembly);
 
            
             base.OnModelCreating(modelBuilder);
 
-            // علاقة TeamFormation مع User (Creator)
             modelBuilder.Entity<TeamFormation>()
                 .HasOne(tf => tf.Creator)
                 .WithMany(u => u.CreatedTeamFormations)
                 .HasForeignKey(tf => tf.CreatorId)
-                .OnDelete(DeleteBehavior.Restrict); // منع حذف المستخدم إذا عنده formations
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // علاقة TeamFormation مع Team (one-to-one)
             modelBuilder.Entity<TeamFormation>()
                 .HasOne(tf => tf.Team)
                 .WithOne(t => t.Formation)
                 .HasForeignKey<Team>(t => t.FormationId)
-                .OnDelete(DeleteBehavior.Cascade); // إذا حذفنا التشكيل، ينحذف الفريق
+                .OnDelete(DeleteBehavior.Cascade); 
 
-            // علاقة TeamMember مع Team
             modelBuilder.Entity<TeamMember>()
                 .HasOne(tm => tm.Team)
                 .WithMany(t => t.Members)
                 .HasForeignKey(tm => tm.TeamId)
-                .OnDelete(DeleteBehavior.Cascade); // إذا حذفنا الفريق، ينحذف الأعضاء
+                .OnDelete(DeleteBehavior.Cascade); 
 
-            // علاقة TeamMember مع User
             modelBuilder.Entity<TeamMember>()
                 .HasOne(tm => tm.User)
                 .WithMany(u => u.TeamMemberships)
                 .HasForeignKey(tm => tm.UserId)
-                .OnDelete(DeleteBehavior.Restrict); // منع حذف المستخدم إذا هو عضو بفريق
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // منع duplicate entries (نفس المستخدم ما يقدر ينضم لنفس الفريق مرتين)
             modelBuilder.Entity<TeamMember>()
                 .HasIndex(tm => new { tm.TeamId, tm.UserId })
                 .IsUnique();

@@ -22,14 +22,12 @@ namespace Society.Infrastructure.Configurations
 
             builder.HasIndex(tf => tf.Status);
 
-            // 🔹 Relation with ProgramSubject (Many Formations -> One ProgramSubject)
             builder
                 .HasOne(tf => tf.ProgramSubject)
                 .WithMany(ps => ps.TeamFormations)
                 .HasForeignKey(tf => tf.ProgramSubjectId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // 🔹 Relation with Team (One Formation -> One Team)
             builder
                 .HasOne(tf => tf.Team)
                 .WithOne(t => t.Formation)

@@ -16,21 +16,16 @@ namespace Society.Infrastructure.Configurations
             builder.HasIndex(tm => new { tm.TeamId, tm.UserId })
                    .IsUnique();
 
-            // 🔹 TeamMember -> Team
             builder
                 .HasOne(tm => tm.Team)
                 .WithMany(t => t.Members)
                 .HasForeignKey(tm => tm.TeamId)
                 .OnDelete(DeleteBehavior.Cascade);
-            // إذا انحذف Team نحذف الأعضاء
-
-            // 🔹 TeamMember -> User
             builder
                 .HasOne<User>()
                 .WithMany()
                 .HasForeignKey(tm => tm.UserId)
                 .OnDelete(DeleteBehavior.Restrict);
-            // منع cascade لتجنب multiple cascade paths
         }
     }
 }

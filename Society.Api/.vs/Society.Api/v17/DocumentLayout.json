@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\",
+  "WorkspaceRootPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F648F69D-F1E9-4244-BF25-879F98D498CB}|..\\Society.Infrastructure\\Society.Infrastructure.csproj|c:\\users\\mstfy\\desktop\\society\\society.infrastructure\\repositories\\teamsystem\\teamformationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,10 +24,10 @@
               "DocumentIndex": 0,
               "Title": "TeamFormationRepository.cs",
               "DocumentMoniker": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
-              "RelativeDocumentMoniker": "..\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\Society\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
               "ToolTip": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
-              "RelativeToolTip": "..\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAzAAAAAAAAAA==",
+              "RelativeToolTip": "..\\..\\Society\\Society.Infrastructure\\Repositories\\TeamSystem\\TeamFormationRepository.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-25T05:30:48.269Z",
               "EditorCaption": ""

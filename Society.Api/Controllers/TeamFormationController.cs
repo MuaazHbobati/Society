@@ -21,7 +21,6 @@ namespace Society.Api.Controllers
             _service = service;
         }
 
-        // GET: api/TeamFormation/all
         [HttpGet("all")]
         public async Task<ActionResult<List<TeamFormationListDto>>> GetAll()
         {
@@ -29,7 +28,6 @@ namespace Society.Api.Controllers
             return Ok(formations);
         }
 
-        // GET: api/TeamFormation/
         [HttpGet]
         public async Task<ActionResult<FormationResponseDto>> GetFormations([FromQuery] FormationRequestDto request)
         {
@@ -44,7 +42,6 @@ namespace Society.Api.Controllers
             return Ok(result);
         }
 
-        // GET: api/TeamFormation/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<TeamFormationDetailsDto>> GetById(int id)
         {
@@ -59,7 +56,6 @@ namespace Society.Api.Controllers
             }
         }
 
-        // POST: api/TeamFormation
         [HttpPost]
         public async Task<ActionResult<TeamFormationDetailsDto>> Create([FromBody] CreateTeamFormationDto dto)
         {

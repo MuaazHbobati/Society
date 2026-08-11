@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lPy3TV3a21U=",
+  "dgSpecHash": "efWhQpqfLvs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj",
+  "projectFilePath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Api\\Society.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mstfy\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\mstfy\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

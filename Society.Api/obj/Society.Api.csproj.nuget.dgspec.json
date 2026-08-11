@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj": {}
+    "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Api\\Society.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj": {
+    "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Api\\Society.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj",
+        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Api\\Society.Api.csproj",
         "projectName": "Society.Api",
-        "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\Society.Api.csproj",
+        "projectPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Api\\Society.Api.csproj",
         "packagesPath": "C:\\Users\\mstfy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Api\\obj\\",
+        "outputPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Society.Application.csproj": {
-                "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Society.Application.csproj"
+              "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Application\\Society.Application.csproj": {
+                "projectPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Application\\Society.Application.csproj"
               },
-              "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Society.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Society.Infrastructure.csproj"
+              "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Infrastructure\\Society.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Infrastructure\\Society.Infrastructure.csproj"
               }
             }
           }
@@ -109,14 +109,14 @@
         }
       }
     },
-    "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Society.Application.csproj": {
+    "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Application\\Society.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Society.Application.csproj",
+        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Application\\Society.Application.csproj",
         "projectName": "Society.Application",
-        "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Society.Application.csproj",
+        "projectPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Application\\Society.Application.csproj",
         "packagesPath": "C:\\Users\\mstfy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\obj\\",
+        "outputPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -137,8 +137,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Society.Domain.csproj": {
-                "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Society.Domain.csproj"
+              "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Domain\\Society.Domain.csproj": {
+                "projectPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Domain\\Society.Domain.csproj"
               }
             }
           }
@@ -188,14 +188,14 @@
         }
       }
     },
-    "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Society.Domain.csproj": {
+    "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Domain\\Society.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Society.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Domain\\Society.Domain.csproj",
         "projectName": "Society.Domain",
-        "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\Society.Domain.csproj",
+        "projectPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Domain\\Society.Domain.csproj",
         "packagesPath": "C:\\Users\\mstfy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Domain\\obj\\",
+        "outputPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -253,14 +253,14 @@
         }
       }
     },
-    "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Society.Infrastructure.csproj": {
+    "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Infrastructure\\Society.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Society.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Infrastructure\\Society.Infrastructure.csproj",
         "projectName": "Society.Infrastructure",
-        "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\Society.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Infrastructure\\Society.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\mstfy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -281,8 +281,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Society.Application.csproj": {
-                "projectPath": "C:\\Users\\mstfy\\Desktop\\Society\\Society.Application\\Society.Application.csproj"
+              "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Application\\Society.Application.csproj": {
+                "projectPath": "C:\\Users\\mstfy\\Desktop\\Socitech-Portfolio\\Society.Application\\Society.Application.csproj"
               }
             }
           }

@@ -24,42 +24,32 @@ using Society.Application.Services.TeamSystem.TeamFormation;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// =====================
-// Controllers + Validation
-// =====================
-
+//Controllers
 builder.Services.AddControllers()
     .AddFluentValidation(fv =>
     {
         fv.RegisterValidatorsFromAssemblyContaining<UpdateUserProfileDtoValidator>();
     });
 
-// =====================
-// Database
-// =====================
+//Database
 builder.Services.AddDbContext<SocietyDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-// =====================
-// Dependency Injection
-// =====================
+//Dependency Injection
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IJwtProvider, JwtProvider>();
 builder.Services.AddScoped<IUserProfileService, UserProfileService>();
 builder.Services.AddScoped<IUserProfileRepository, UserProfileRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-// تسجيل الـ TeamFormation Service والـ Repository
 builder.Services.AddScoped<ITeamFormationService, TeamFormationService>();
 builder.Services.AddScoped<ITeamFormationRepository, TeamFormationRepository>();
 
 builder.Services.AddScoped<IProgramService, ProgramService>();
 builder.Services.AddScoped<IProgramRepository, ProgramRepository>();
 
+//Auth(JWT)
 
-// =====================
-// Authentication (JWT)
-// =====================
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -80,9 +70,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-// =====================
-// Swagger + JWT
-// =====================
+//Swagger + JWT
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -135,9 +123,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// =====================
-// Middleware
-// =====================
+//Middleware
 
 if (app.Environment.IsDevelopment())
 {
