@@ -23,7 +23,7 @@ The project is currently live at:
 
 ---
 
-## 📖 About the Platform
+## About the Platform
 
 **Socitech** is a digital platform designed specifically for technology students in universities. It replaces the noise of fragmented social media groups with an organized environment that combines:
 
@@ -31,9 +31,23 @@ The project is currently live at:
 - **Smart Partner System**: Post project requests and get matched with compatible students.
 - **Meaningful Discussions**: A space for serious academic discussions, tech-focused posts, and productive comments away from chaos and noise.
 
+
+## Why "Socitech"?
+
+The project was originally named **Society**. However, as the platform evolved, it became clear that the name didn't fully represent its technical and innovative nature.
+
+**Socitech** is a combination of:
+- **Society** – Community and collaboration
+- **Tech** – Technology and innovation
+
+This rebranding reflects the platform's mission: building a **tech-focused academic community** for university students.
+
+> **Note:** The repository folders and some internal code still use the original name `Society` for historical and technical continuity reasons. The platform itself is now officially branded as **Socitech**.
+
+
 ---
 
-## 🤔 The Problem It Solves
+## The Problem It Solves
 
 Every semester starts with the same familiar scenario at any Syrian university:
 
@@ -52,7 +66,7 @@ Thousands of messages. Arguments. Spam. Forwarded jokes. Important information g
 
 ---
 
-## 💡 The Solution: Socitech
+## The Solution: Socitech
 
 Socitech provides:
 
@@ -65,21 +79,21 @@ Socitech provides:
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- ✅ **Fully Responsive** – Seamlessly works on desktop, tablet, and mobile.
-- ✅ **JWT Authentication** – Secure login and registration.
-- ✅ **Team Formation System** – Browse, filter, and view team details.
-- ✅ **Clean Architecture** – Domain, Application, Infrastructure, Presentation layers.
-- ✅ **Profile Management** – Edit personal info, skills, and portfolio links.
-- ✅ **Modern UI** – Clean, intuitive interface with a comfortable blue theme.
-- ✅ **Real-time Notifications** – Via SignalR WebSocket.
-- ✅ **Smart Caching** – Using Redis Cache and React Query Client-Side Caching.
-- ✅ **Advanced Security** – Rate Limiting Policies to protect the API.
+- **Fully Responsive** – Seamlessly works on desktop, tablet, and mobile.
+- **JWT Authentication** – Secure login and registration.
+- **Team Formation System** – Browse, filter, and view team details.
+- **Clean Architecture** – Domain, Application, Infrastructure, Presentation layers.
+- **Profile Management** – Edit personal info, skills, and portfolio links.
+- **Modern UI** – Clean, intuitive interface with a comfortable blue theme.
+- **Real-time Notifications** – Via SignalR WebSocket.
+- **Smart Caching** – Using Redis Cache and React Query Client-Side Caching.
+- **Advanced Security** – Rate Limiting Policies to protect the API.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | **Layer**                   | **Technologies**                                            |
 | --------------------------- | ----------------------------------------------------------- |
@@ -96,7 +110,7 @@ Socitech provides:
 
 ---
 
-## 🧱 Architecture
+## Architecture
 
 ![Full Stack Application Struct](assets/architecture-struct.png)
 
@@ -113,19 +127,19 @@ The project follows **Clean Architecture** with clear separation of concerns:
 
 ### Principles & Standards Followed:
 
-- ✅ **SOLID Principles**
-- ✅ **Object-Oriented Design (OOD)**
-- ✅ **Object-Oriented Programming (OOP)**
-- ✅ **Design Patterns**
-- ✅ **Clean Architecture**
-- ✅ **Repository Pattern**
-- ✅ **Dependency Injection**
+- **SOLID Principles**
+- **Object-Oriented Design (OOD)**
+- **Object-Oriented Programming (OOP)**
+- **Design Patterns**
+- **Clean Architecture**
+- **Repository Pattern**
+- **Dependency Injection**
 
 This design ensures the system is **Scalable**, **Testable**, and **Maintainable**.
 
 ---
 
-## 🏗️ Technical Architecture Details
+## Technical Architecture Details
 
 ### Backend (.NET Core 8 Web API)
 
@@ -150,7 +164,7 @@ This design ensures the system is **Scalable**, **Testable**, and **Maintainable
 | **Styling**           | CSS3 with fully responsive design                 |
 | **Performance**       | Lazy Loading, Code Splitting                      |
 
-## 📸 Screenshots
+## Screenshots
 
 ### Landing Page
 
@@ -184,7 +198,7 @@ This design ensures the system is **Scalable**, **Testable**, and **Maintainable
 
 ---
 
-## 🔮 Roadmap
+## Roadmap
 
 - [x] Team Formation system (backend)
 - [x] React Landing Page
@@ -201,7 +215,7 @@ This design ensures the system is **Scalable**, **Testable**, and **Maintainable
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 This is a public archive for portfolio purposes only. The active development is ongoing in a private repository. Therefore, contributions are not accepted at this time.
 
@@ -217,7 +231,7 @@ This repository is a **public archive** for portfolio and demonstration purposes
 
 ---
 
-## 👤 Founder and Developer
+## Founder and Developer
 
 **Mohammad Muaz Hbobati**  
 IT Engineering Student at Syrian Virtual University (SVU).  
@@ -233,25 +247,25 @@ Passionate about software architecture, clean code, and building solutions that 
 
 If you find this project interesting or inspiring:
 
-- ⭐ Star the repository on GitHub
-- 🔗 Share it with your network
-- 📧 Reach out for collaboration or feedback
+- Star the repository on GitHub
+- Share it with your network
+- Reach out for collaboration or feedback
 
 ---
 
-## 📊 Repository Statistics
+## Repository Statistics
 
 | **Metric**       | **Value**                     |
 | ---------------- | ----------------------------- |
 | **Commits**      | 50+ (archive) / 250+ (active) |
 | **Languages**    | C#, JavaScript, CSS, HTML     |
-| **Stars**        | ⭐ 2                          |
+| **Stars**        | 2                             |
 | **Forks**        | 0                             |
 | **Contributors** | 1                             |
 
 ---
 
-## 🏷️ Tags
+## Tags
 
 `aspnetcore` `react` `clean-architecture` `solid-principles` `design-patterns` `signalr` `redis` `jwt` `entity-framework` `sql-server` `vercel` `monsteraspnet` `fullstack` `portfolio`
 
